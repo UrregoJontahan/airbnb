@@ -1,7 +1,10 @@
+"use client"
+
 import { FaAirbnb } from "react-icons/fa";
 import {Mulish} from "next/font/google"
 import Link from "next/link";
 import { ButtonUser } from "../profileUser";
+import { useEffect } from "react";
 
 const mulish = Mulish({
     weight: ["800"],
@@ -9,6 +12,28 @@ const mulish = Mulish({
   })
   
   export const Header = () => {
+
+    useEffect(() => {
+        fetchPostBackend()
+    },[])
+ 
+    const fetchPostBackend = async () =>{
+        const params = new URLSearchParams(window.location.search);
+        const code = params.get('code');
+
+        const fetchLogin = await fetch("http://localhost:2000/auth/google",{
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({code: code}),
+        })
+
+        const cualquiercosa =await fetchLogin.json()
+
+        console.log("login result", cualquiercosa)
+    } 
+      
       return (
           <header className="relative">
               <nav className="flex flex-row flex-nowrap list-none">

@@ -1,6 +1,7 @@
 "use client"
+
 import Link from "next/link"
-import { useState } from "react";
+import {  useState } from "react";
 import { useRouter } from "next/navigation";
 
 export const NewUserAccount =() => {
@@ -30,6 +31,15 @@ export const NewUserAccount =() => {
     console.error('Error de red:', error);
     }
 }
+
+  const handleGoogleLogin = () => {
+    window.location.href = "http://localhost:2000/auth/google"
+  };
+
+  const handleFacebookLogin = () => {
+    window.location.href = "http://localhost:2000/auth/Facebook"
+  };
+
     return(
       <div className="flex items-center justify-center h-screen">
         <div className="w-2/5 h-4/5 rounded-md border border-gray-400 shadow-xl shadow-neutral-700">
@@ -47,8 +57,8 @@ export const NewUserAccount =() => {
               <input type="submit" className="w-full h-10 border bg-pink-600 rounded-lg mt-4 text-white font-medium cursor-pointer" value="Continúa"/>
               <span className="flex justify-center pt-4">o</span>
               <div className="flex flex-col pt-8 gap-4">
-                <button className="w-full h-10 border border-gray-400 rounded-lg text-black cursor-pointer hover:bg-gray-200">Continúa con Facebook</button>
-                <button className="w-full h-10 border border-gray-400 rounded-lg pl-4 cursor-pointer hover:bg-gray-200">Continúa con Google</button>
+                <button className="w-full h-10 border border-gray-400 rounded-lg text-black cursor-pointer hover:bg-gray-200" onClick={handleFacebookLogin}>Continúa con Facebook</button>
+                <button className="w-full h-10 border border-gray-400 rounded-lg pl-4 cursor-pointer hover:bg-gray-200" onClick={handleGoogleLogin}>Continúa con Google</button>
               </div>
             </form>
           </div>

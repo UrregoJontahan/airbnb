@@ -2,14 +2,13 @@
 
 import Link from "next/link"
 import {  useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation"
 
 export const NewUserAccount =() => {
   const [name, setName] = useState('');
   const [celphone, setCelphone] = useState('');
-  const [password, setPassword] = useState('');
+  const [password, setPassword] = useState(''); 
   const router = useRouter()
- 
  
   const handleSubmitSingup = async (e:any) => {
       e.preventDefault();
@@ -22,23 +21,59 @@ export const NewUserAccount =() => {
           body: JSON.stringify({ name, celphone, password }),
         });
         if (response.ok) {
-        console.log("bien")
-          router.push("/login")
+        console.log("bien", await response.json())
+        router.push("/")
+         
       } else {
       console.error('Error al registrar usuario');
       }
     } catch (error) {
     console.error('Error de red:', error);
     }
-}
+  }
 
-  const handleGoogleLogin = () => {
-    window.location.href = "http://localhost:2000/auth/google"
-  };
+  const handleGoogleLogin = async () => {
+    window.location.href = "http://localhost:2000/google"
+   try {
+      const response = await fetch('http://localhost:2000/google', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, celphone, password }),
+      });
+      if (response.ok) {
+      console.log("bien", await response.json())     
+    } else {
+    console.error('Error al registrar usuario');
+    router.push("/login")
+    }
+  } catch (error) {
+  console.error('Error de red:', error);
+  }
+};
 
-  const handleFacebookLogin = () => {
-    window.location.href = "http://localhost:2000/auth/Facebook"
-  };
+  const handleFacebookLogin = async () => {
+    window.location.href = "http://localhost:2000/facebook"
+
+    try {
+      const response = await fetch('http://localhost:2000/facebook', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ name, celphone, password }),
+      });
+      if (response.ok) {
+      console.log("bien", await response.json())     
+    } else {
+    console.error('Error al registrar usuario');
+      
+    }
+  } catch (error) {
+  console.error('Error de red:', error);
+  }
+};
 
     return(
       <div className="flex items-center justify-center h-screen">

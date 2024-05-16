@@ -43,9 +43,11 @@ const Auth: React.FC = () => {
 
         const result = await fetchLogin.json();
 
-        if (result.success) {
+        console.log(result)
+
+        if (result.id) {
             setAuthenticated(true);
-            setUser(result.user);
+            setUser(result.email);
         }
     };
 
@@ -62,10 +64,11 @@ const Auth: React.FC = () => {
         });
 
         const result = await fetchLogin.json();
+        console.log(result)
 
-        if (result.success) {
+        if (result.id) {
             setAuthenticated(true);
-            setUser(result.user);
+            setUser(result.name);
         }
     };
 
@@ -74,6 +77,7 @@ const Auth: React.FC = () => {
             router.push("/");
         }
     }, [isAuthenticated, user, router]);
+
 
     return (
         <div>

@@ -5,7 +5,7 @@ export default function Home (){
     return(
         <main>
             <Header/>
-            <ButtonSearchPlace/>
+            <ButtonSearchPlace/>            
         </main>
     )
 }

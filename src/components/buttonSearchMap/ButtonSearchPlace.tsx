@@ -3,10 +3,10 @@ import { FaSearch } from "react-icons/fa";
 
 export const ButtonSearchPlace = () => {
   return (
-    <div className="w-full flex justify-center">
-      <div className="w-full sm:w-3/5">
-        <div className="flex flex-row items-center justify-center border border-gray-300 rounded-full h-16 pl-4 pr-4">
-          <span className="text-xs sm:text-sm w-48 mb-2 sm:mb-0 sm:mr-2 p-1 rounded truncate hover:bg-gray-200 border-r border-gray-300">
+    <div className="flex justify-center w-full">
+      <div className="w-2/4">
+        <div className="flex flex-row items-center  border border-gray-300 rounded-full h-16 pl-4 pr-4 shadow-lg shadow-neutral-300 ">
+          <span className="text-xs sm:text-sm w-64 mb-2 sm:mb-0 sm:mr-2 p-1 rounded truncate hover:bg-gray-200 border-r border-gray-300 pl-4 ">
             Dónde
             <p className="text-base sm:text-sm overflow-hidden whitespace-nowrap overflow-ellipsis truncate">
               Explora destinos
@@ -24,7 +24,7 @@ export const ButtonSearchPlace = () => {
               Explora destinos
             </p>
           </span>
-          <span className="text-xs sm:text-sm w-40 mb-2 sm:mb-0 sm:mr-2 p-1 rounded truncate hover:bg-gray-200">
+          <span className="text-xs sm:text-sm w-64 ml-4 mb-2 sm:mb-0 sm:mr-2 p-1 rounded truncate hover:bg-gray-200">
             Quién
             <p className="text-base sm:text-sm overflow-hidden whitespace-nowrap overflow-ellipsis">
               Explora destinos

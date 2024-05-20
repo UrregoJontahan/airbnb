@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState, FormEvent } from "react";
 import { useRouter } from "next/navigation";
-import { registerUser, redirectToGoogleLogin, redirectToFacebookLogin } from "../../services/authService";
+import { registerUser, redirectToGoogleLogin, redirectToFacebookLogin } from "../../app/services/authService";
 
 export const NewUserAccount = () => {
   const [name, setName] = useState('');

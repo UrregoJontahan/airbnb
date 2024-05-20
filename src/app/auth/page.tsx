@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation"; 
-import useAuthStore from "../../lib/authUser"; 
+import useAuthStore from "../lib/authUser"; 
 
 const Auth: React.FC = () => {
     const [loader, setLoader] = useState(true);

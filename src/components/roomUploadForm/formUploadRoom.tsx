@@ -4,7 +4,7 @@ import { useState, FormEvent } from "react";
 import Link from "next/link";
 import { FaAirbnb } from "react-icons/fa";
 import { Mulish } from "next/font/google";
-import { uploadImages, submitRoomForm } from "../../services/roomServices";
+import { uploadImages, submitRoomForm } from "../../app/services/roomServices";
 
 const mulish = Mulish({
   weight: ["800"],

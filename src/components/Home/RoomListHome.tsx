@@ -20,8 +20,8 @@ export function RoomList() {
   }, []);
 
     return (
-        <div className="w-full h-auto mt-2">
-          <div className="flex flex-wrap justify-center gap-8">
+        <div className="w-full pl-16 pr-16 h-auto mt-2">
+          <div className="flex flex-wrap justify-center">
             {rooms.map((room) => (
               <div key={room.id} className="w-72">
                 {room.photos.length > 0 && (

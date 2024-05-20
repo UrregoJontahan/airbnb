@@ -1,5 +1,6 @@
-import Image from "next/image";
 import React, { useState } from "react";
+import { FaCircle } from "react-icons/fa";
+import Image from "next/image";
 import { FaCircleArrowRight, FaCircleArrowLeft } from "react-icons/fa6";
 
 interface ImageCarouselProps {
@@ -8,17 +9,17 @@ interface ImageCarouselProps {
 }
 
 export const ImageCarousel: React.FC<ImageCarouselProps> = ({ photos, alt }) => {
-  const [ currentIndex, setCurrentIndex ] = useState(0); 
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const handleNextImage = () =>{
-    setCurrentIndex(( prevIndex )=>( prevIndex + 1) % photos.length)
-  }
+  const handleNextImage = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % photos.length);
+  };
 
   const handleBackImage = () => {
     setCurrentIndex((prevIndex) => {
-    let newIndex = prevIndex - 1;
-    
-    if (newIndex < 0) {
+      let newIndex = prevIndex - 1;
+
+      if (newIndex < 0) {
         newIndex = photos.length - 1;
       }
       return newIndex;
@@ -26,31 +27,44 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({ photos, alt }) => 
   };
 
   return (
-    <div className="w-72 h-72 flex items-center overflow-hidden rounded-lg flex-col relative cursor-pointer group">
-        <div className="w-full h-full group-hover:opacity-100 transition-opacity">
-            <Image
-                src={photos[currentIndex]}
-                alt={alt}
-                width={300}
-                height={300}
-                className="w-full h-full"
+    <div className="w-64 h-64 flex items-center overflow-hidden rounded-lg flex-col relative cursor-pointer group">
+      <div className="w-full h-full group-hover:opacity-100 transition-opacity">
+        <Image
+          src={photos[currentIndex]}
+          alt={alt}
+          width={200}
+          height={200}
+          className="w-full h-full"
+        />
+      </div>
+      {photos.length > 1 && (
+        <div className="absolute bottom-2 flex justify-center w-full items-center">
+          {photos.map((_, index) => (
+            <FaCircle
+              key={index}
+              className={`mx-1 text-white text-opacity-${currentIndex === index ? "200" : "50"} cursor-pointer text-${currentIndex === index ? "xl":"xs"}`}
+              onClick={() => setCurrentIndex(index)}
             />
+          ))}
         </div>
-       {photos.length > 1 ? 
-       <div>
-            <button
-                className="absolute top-1/2 transform -translate-y-1/2 right-2 text-white px-2 py-1 text-3xl opacity-0 group-hover:opacity-100 transition-opacity"
-                onClick={handleNextImage}
-            >
-                <FaCircleArrowRight />
-            </button>
-            <button
-                className="absolute top-1/2 transform -translate-y-1/2 left-2 text-white px-2 py-1 text-3xl opacity-0 group-hover:opacity-100 transition-opacity"
-                onClick={handleBackImage}
-            >
-                <FaCircleArrowLeft />
-            </button> 
-            </div>  : "" } 
-    </div> 
+      )}
+      {photos.length > 1 && (
+        <div>
+          <button
+            className="absolute top-1/2 transform -translate-y-1/2 right-2 text-white px-2 py-1 text-3xl opacity-0 group-hover:opacity-100 transition-opacity"
+            onClick={handleNextImage}
+          >
+            <FaCircleArrowRight />
+          </button>
+          <button
+            className="absolute top-1/2 transform -translate-y-1/2 left-2 text-white px-2 py-1 text-3xl opacity-0 group-hover:opacity-100 transition-opacity"
+            onClick={handleBackImage}
+          >
+            <FaCircleArrowLeft />
+          </button>
+        </div>
+      )}
+    </div>
   );
 };
+

@@ -15,6 +15,10 @@ const config: Config = {
       },
       width: {
         '300': '300px',
+      },
+      fontSize:{
+        xs:"0.4rem",
+        sm:"0.8rem"
       }
     },
   },

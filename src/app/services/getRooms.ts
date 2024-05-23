@@ -1,8 +1,8 @@
-const URLRomms ="http://localhost:2000/rooms"
+const URLRooms ="http://localhost:2000"
 
 export const fetchRooms = async ():Promise<any> => {
     try{
-        const response = await fetch( URLRomms );
+        const response = await fetch( `${URLRooms}/rooms` );
         const data = await response.json();
 
         return data
@@ -11,3 +11,16 @@ export const fetchRooms = async ():Promise<any> => {
         console.error("error")
     }
 }
+
+export const fetchRoomsById = async (_id: any): Promise<any> => {
+    try {
+        const response = await fetch(`http://localhost:2000/rooms/${_id}`);
+        const data = await response.json();
+        console.log(data, "data");
+
+        return data;
+
+    } catch (error) {
+        console.error("Error fetching room:", error);
+    }
+};

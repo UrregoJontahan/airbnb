@@ -26,6 +26,7 @@ export const uploadImages = async (files: FileList): Promise<string[]> => {
     title: string;
     description: string;
     price: number;
+    city:string;
     location: string;
     capacity: number;
     amenities: string;
@@ -37,6 +38,7 @@ export const uploadImages = async (files: FileList): Promise<string[]> => {
       title: formData.get('title') as string,
       description: formData.get('description') as string,
       price: Number(formData.get('price')),
+      city: formData.get("city") as string,
       location: formData.get('location') as string,
       capacity: Number(formData.get('capacity')),
       amenities: formData.get('amenities') as string,

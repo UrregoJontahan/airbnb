@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation"; 
-import useAuthStore from "../lib/authUser"; 
+import { useRouter } from "next/navigation";
+import useAuthStore from "../lib/authUser";
 
 const Auth: React.FC = () => {
     const [loader, setLoader] = useState(true);
@@ -43,7 +43,7 @@ const Auth: React.FC = () => {
 
         const result = await fetchLogin.json();
 
-        console.log(result)
+        console.log(result);
 
         if (result.id) {
             setAuthenticated(true);
@@ -64,7 +64,7 @@ const Auth: React.FC = () => {
         });
 
         const result = await fetchLogin.json();
-        console.log(result)
+        console.log(result);
 
         if (result.id) {
             setAuthenticated(true);
@@ -73,11 +73,16 @@ const Auth: React.FC = () => {
     };
 
     useEffect(() => {
-        if (isAuthenticated && user) {
-            router.push("/");
+        if (!loader) {
+            if (isAuthenticated && user) {
+                console.log("Redirigiendo a la página principal...");
+                router.push("/");
+            } else {
+                console.log("Redirigiendo a la página de registro...");
+                router.push("/signup");
+            }
         }
-    }, [isAuthenticated, user, router]);
-
+    }, [isAuthenticated, user, loader, router]);
 
     return (
         <div>

@@ -12,9 +12,9 @@ export const fetchRooms = async ():Promise<any> => {
     }
 }
 
-export const fetchRoomsById = async (_id: any): Promise<any> => {
+export const fetchRoomsById = async (id: any): Promise<any> => {
     try {
-        const response = await fetch(`http://localhost:2000/rooms/${_id}`);
+        const response = await fetch(`http://localhost:2000/rooms/${id}`);
         const data = await response.json();
         console.log(data, "data");
 

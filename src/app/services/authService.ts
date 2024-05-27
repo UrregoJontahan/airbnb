@@ -11,13 +11,15 @@ export const registerUser = async (name: string, celphone: string, password: str
       if (!response.ok) {
         throw new Error('Error al registrar usuario');
       }
-  
+
       console.log("bien", await response.json());
     } catch (error) {
       console.error('Error de red:', error);
       throw error;
     }
   };
+
+  
   
   export const redirectToGoogleLogin = (): void => {
     window.location.href = "http://localhost:2000/google";

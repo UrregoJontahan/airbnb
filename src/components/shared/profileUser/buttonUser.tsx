@@ -12,8 +12,8 @@ export function ButtonUser(){
     }
 
     return(
-        <div className="flex">
-            <div className="flex w-24 h-12 rounded-full border border-gray-400 mt-4 mr-12 items-center justify-center gap-4 hover:shadow-xl cursor-pointer" onClick={handleOpenBoxUser}>
+            <div>
+            <div className="flex w-24 h-12 rounded-full border border-gray-400 mr-20 items-center justify-center gap-4 hover:shadow-xl cursor-pointer" onClick={handleOpenBoxUser}>
                 <div className="flex flex-col gap-0.5 pl-1">
                     <span className="w-4 h-0.5 bg-black"></span>
                     <span className="w-4 h-0.5 bg-black"></span>

@@ -2,42 +2,25 @@
 
 import Link from "next/link"
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { registerUser, redirectToFacebookLogin, redirectToGoogleLogin } from "app/app/services/authService";
  
 export function Login(){
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [celphone, setCelphone] = useState('');
   const [error, setError] = useState(false)
+  const router = useRouter()
 
   const handleSubmitLogin = async (e:any) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:2000/google', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name, password, celphone }),
-      });
-      if (response.ok) {
-        console.log("Inicio de sesión exitoso");
-      } else {
-        setError(true)
-      }
+      await registerUser(name, celphone, password);
+      router.push("/");
     } catch (error) {
       console.error('Error de red:', error);
     }
   }
-
-  const handleGoogleLogin = () => {
-    
-    window.location.href = "http://localhost:2000/google";
-  };
-
-  const handleFacebookLogin = () => {
-    window.location.href = "http://localhost:2000/auth/Facebook"
-  };
-
 
    return(
     <div className="flex items-center justify-center h-screen">
@@ -59,8 +42,8 @@ export function Login(){
           )}
           <span className="flex justify-center pt-4">o</span>
           <div className="flex flex-col pt-8 gap-4">
-            <button className="w-full h-10 border border-gray-400 rounded-lg text-black cursor-pointer hover:bg-gray-200" onClick={handleFacebookLogin}>Continúa con Facebook</button>
-            <button className="w-full h-10 border border-gray-400 rounded-lg pl-4 cursor-pointer hover:bg-gray-200" onClick={handleGoogleLogin}>Continúa con Google</button>
+            <button className="w-full h-10 border border-gray-400 rounded-lg text-black cursor-pointer hover:bg-gray-200" onClick={redirectToFacebookLogin}>Continúa con Facebook</button>
+            <button className="w-full h-10 border border-gray-400 rounded-lg pl-4 cursor-pointer hover:bg-gray-200" onClick={redirectToGoogleLogin}>Continúa con Google</button>
           </div>
         </form>
       </div>

@@ -3,7 +3,7 @@ import { FaSearch } from "react-icons/fa";
 
 export const ButtonSearchPlace = () => {
   return (
-    <div className="flex justify-center w-full">
+    <div className="flex justify-center w-full pt-4">
       <div className="w-2/4">
         <div className="flex flex-row items-center  border border-gray-300 rounded-full h-16 pl-4 pr-4 shadow-lg shadow-neutral-300 ">
           <span className="text-sm sm:text-sm w-64 h-full pt-3 sm:mb-0 sm:mr-2 rounded truncate hover:bg-gray-200 hover:rounded-full border-r border-gray-300 pl-4 ">

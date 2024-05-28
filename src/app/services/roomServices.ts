@@ -31,6 +31,7 @@ export const uploadImages = async (files: FileList): Promise<string[]> => {
     capacity: number;
     amenities: string;
     photos: string[];
+    host:string;
   }
   
   export const submitRoomForm = async (formData: FormData, imageUrls: string[]): Promise<void> => {
@@ -43,6 +44,7 @@ export const uploadImages = async (files: FileList): Promise<string[]> => {
       capacity: Number(formData.get('capacity')),
       amenities: formData.get('amenities') as string,
       photos: imageUrls,
+      host:formData.get(`host`) as string,
     };
   
     try {

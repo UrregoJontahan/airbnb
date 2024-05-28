@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { UserProvider } from "@auth0/nextjs-auth0/client";
 import "./globals.css";
+import MenuMobile from "./menuOptions/layout";
 
 export const metadata: Metadata = {
   title: "Airbnb",
@@ -15,9 +16,11 @@ export default function RootLayout({
   return (
     <html lang="es">
       <UserProvider>
+        <MenuMobile>
         <body>
           {children}
         </body>
+        </MenuMobile> 
       </UserProvider>
     </html>
   );

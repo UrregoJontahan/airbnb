@@ -115,6 +115,9 @@ export function RoomForm() {
         <form className="flex flex-col border border-gray-300 p-12 gap-2 shadow-xl shadow-neutral-400" onSubmit={handleSubmitForm}>
           <label htmlFor="title">Título:</label>
           <input type="text" id="title" name="title" className="border border-gray-400 rounded-lg p-4" required />
+
+          <label htmlFor="host">Anfitrion:</label>
+          <input type="text" id="host" name="host" className="border border-gray-400 rounded-lg p-4" required />
   
           <label htmlFor="description">Descripción:</label>
           <textarea id="description" name="description" className="border border-gray-400 rounded-lg p-4" required></textarea>

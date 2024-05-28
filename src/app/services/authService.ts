@@ -19,6 +19,16 @@ export const registerUser = async (name: string, celphone: string, password: str
     }
   };
 
+  export const loginUserForm = async (name:string, celphone:string, password:string) =>{
+    const response = await fetch(`http://localhost:2000/users/login`,{
+      method:"POST",
+      headers:{
+        'Content-Type': 'application/json'
+      },
+      body:JSON.stringify({name,celphone,password})
+    })
+    return response
+  }
   
   
   export const redirectToGoogleLogin = (): void => {

@@ -16,8 +16,6 @@ export const fetchRoomsById = async (id: any): Promise<any> => {
     try {
         const response = await fetch(`http://localhost:2000/rooms/${id}`);
         const data = await response.json();
-        console.log(data, "data");
-
         return data;
 
     } catch (error) {

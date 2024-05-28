@@ -3,7 +3,7 @@ import { FaCircle } from "react-icons/fa";
 import Image from "next/image";
 import { FaCircleArrowRight, FaCircleArrowLeft } from "react-icons/fa6";
 import Link from "next/link";
-import { ButtonShared } from "./buttonShared/buttonShared";
+import { ButtonShared } from "../shared/buttonShared/buttonShared";
 
 interface ImageCarouselProps {
   photos: string[];
@@ -35,7 +35,7 @@ export const ImageCarousel: React.FC<ImageCarouselProps> = ({ photos, alt, room}
   };
 
   return (
-    <div className="w-64 h-64 flex items-center overflow-hidden rounded-lg flex-col relative cursor-pointer group">
+    <div className="w-full h-80 flex items-center overflow-hidden rounded-lg flex-col relative cursor-pointer group md:w-64 md:h-64">
       <Link href={`/room-details/${room._id}`} className="w-full h-full group-hover:opacity-100 transition-opacity pt-4">
         <Image
           src={photos[currentIndex]}

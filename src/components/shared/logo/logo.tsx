@@ -9,7 +9,7 @@ const mulish = Mulish({
   
 export function Logo(){
     return(
-       <div>
+       <div className="hidden md:block">
             <Link href={"/"} className="flex flex-row flex-nowrap list-none relative font-bold text-pink-600 left-0 lg:left-14">
                 <FaAirbnb className="text-3xl"/>
                 <span className={`${mulish.className} text-2xl font-bold hidden md:block lg:hidden`}>airbnb</span>

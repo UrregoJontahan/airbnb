@@ -5,15 +5,21 @@ import { Logo } from "../shared/logo/logo";
 
   export const Header = () => {
       return (
-          <header className="flex relative w-full pt-4">
-              <nav className="flex flex-row flex-nowrap list-none items-center w-full">
+        <div>
+          <div className="hidden md:block">
+            <header className="flex relative w-full h-16 "> 
+              <nav className="flex flex-row flex-nowrap list-none items-center w-full justify-between">
                 <Logo/>
-                <Tags/>       
-                <div className="flex absolute right-4 gap-2">
+                <div className="flex pl-20">
+                  <Tags/> 
+                </div>      
+                <div className="flex">
                   <ButtonRommForm/>   
                   <ButtonUser/>
                 </div>
               </nav>
-          </header>
+            </header>
+           </div>
+        </div>
       )
   }

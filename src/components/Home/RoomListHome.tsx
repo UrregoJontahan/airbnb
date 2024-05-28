@@ -2,7 +2,7 @@
 
 import { fetchRooms } from "app/app/services/getRooms";
 import { useEffect, useState } from "react";
-import { ImageCarousel } from "../shared/ImageCarousel";
+import { ImageCarousel } from "../imagesCarousel/ImageCarousel";
 
 export function RoomList() {
   const [rooms, setRooms] = useState<any[]>([]);
@@ -20,10 +20,10 @@ export function RoomList() {
   }, []);
 
   return (
-        <div className="w-full h-auto mt-2 flex justify-center">
-          <div className="flex flex-wrap justify-center" >
+        <div className="w-full h-auto md:mt-2 flex md:justify-center mb-8">
+          <div className="flex flex-wrap pl-5 md:justify-center" >
             {rooms.map((room) => (
-              <div className="w-72 pl-4" key={room.id}>
+              <div className="w-11/12 md:w-72 md:pl-4" key={room.id}>
                 <>
                 {room.photos.length > 0 && (
                   <>

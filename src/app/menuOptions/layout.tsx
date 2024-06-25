@@ -1,18 +1,11 @@
-import { MenuOptions } from "app/components/menuOptions/menuOptionsMobile";
-import { ReactNode } from "react";
+import { MenuOptionsMobile } from "app/components/menuOptions/menuOptionsMobile";
 
-interface MobileLayoutProps {
-    children: ReactNode;
-  }
-  
-
-const MenuMobile = ({ children }: MobileLayoutProps) => {
-    return(
+const MenuMobile = () => {
+    return (
         <div className="fixed bottom-0 z-10 w-full md:hidden">
-            {children}
-            <MenuOptions/>
-          </div>
-    )
+            <MenuOptionsMobile />
+        </div>
+    );
 }
 
-export default MenuMobile
+export default MenuMobile;

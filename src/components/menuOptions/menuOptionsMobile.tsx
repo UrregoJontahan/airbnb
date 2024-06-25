@@ -3,7 +3,7 @@ import { GrFavorite } from "react-icons/gr";
 import { FaRegCircleUser } from "react-icons/fa6";
 import Link from "next/link";
 
-export function MenuOptions (){
+export function MenuOptionsMobile (){
     return(
             <div className="w-full h-16 flex items-center justify-center bg-white gap-4 border border-gray-300">
                 <Link href={"/"} className="flex text-pink-600 flex-col justify-center items-center h-12 w-16">

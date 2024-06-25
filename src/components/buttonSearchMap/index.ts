@@ -1,1 +1,0 @@
-export { ButtonSearchPlace } from "./ButtonSearchPlace";

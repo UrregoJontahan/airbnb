@@ -1,7 +1,8 @@
 import { Header } from "app/components/Header";
-import { ButtonSearchPlace } from "app/components/buttonSearchMap";
+import { ButtonSearchPlace } from "app/components/buttonSearch/reservationPlace/ButtonSearchPlace";
 import { RoomList } from "../components/Home/index"
 import { Icons } from "../components/icons/index"
+import MenuMobile from "./menuOptions/layout";
 
 export default function Home (){
     return(
@@ -9,7 +10,10 @@ export default function Home (){
             <Header/>
             <ButtonSearchPlace/> 
             <Icons/>
-            <RoomList/>     
+            <RoomList/>
+            <div className="md:hidden">
+                <MenuMobile/>    
+            </div>     
         </main>
     )
 }

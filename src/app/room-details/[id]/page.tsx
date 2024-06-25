@@ -10,6 +10,7 @@ import { ButtonShared } from "app/components/shared/buttonShared/buttonShared";
 import { Map } from "app/components/Map/map";
 import { ImagesCarouselMobile } from "app/components/imagesCarousel/imagesCarouselMobile";
 import { Details } from "app/components/details/details";
+import { CalendarReservation } from "app/components/reservation/calendar/calendarReservation";
 
 export default function DetailsRoom({ params }: any) {
   const [room, setRoom] = useState<{
@@ -36,7 +37,7 @@ export default function DetailsRoom({ params }: any) {
 
 
   return (
-    <div>
+    <div className="mb-20">
       <div className="w-full h-16 md:hidden flex items-center justify-around gap-44">
         <ArrowBack />
         <ButtonShared room={room} />
@@ -53,6 +54,7 @@ export default function DetailsRoom({ params }: any) {
           <p>{room.location}</p>
           <Map coordinates={room.coordinates}/>
         </div>
+        {/* <CalendarReservation/> */}
     </div>
   );
 }

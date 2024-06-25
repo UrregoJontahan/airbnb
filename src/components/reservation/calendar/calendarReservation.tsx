@@ -95,7 +95,7 @@ export const CalendarReservation = () => {
           />
         </div>
       </div>
-      <TagsCalendar />
+      {/* <TagsCalendar /> */}
     </div>
   );
 };

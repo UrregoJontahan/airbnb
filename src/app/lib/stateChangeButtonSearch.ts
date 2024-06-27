@@ -17,6 +17,7 @@ interface State {
   openFlex:Boolean;
   openReservation:Boolean;
   showReservationPlace:boolean,
+  openPanelSearch:boolean,
   setOpenWhere: (open: boolean) => void;
   setOpenarrive: (open: boolean) => void;
   setOpenExit: (open:boolean) => void;
@@ -33,6 +34,7 @@ interface State {
   setOpenFlex: (click:boolean) => void;
   setOpenReservation:(click:boolean) => void
   setShowReservationPlace: (click:boolean) => void;
+  setOpenPanelSearch: ( click: boolean) => void;
 }
 
 export const useStore = create<State>(( set:any) => ({
@@ -52,6 +54,7 @@ export const useStore = create<State>(( set:any) => ({
   openFlex:false,
   openReservation:false,
   showReservationPlace:true,
+  openPanelSearch:false,
   setOpenWhere: (open) => set({ openWhere: open }),
   setOpenarrive: (open) => set({ openArrive: open }),
   setOpenExit:(open)=> set({openExit:open}),
@@ -67,5 +70,6 @@ export const useStore = create<State>(( set:any) => ({
   setOpenMonths: (click) => set({openMonths: click}),
   setOpenFlex: (click) => set({openFlex: click}),
   setOpenReservation:(click) =>set({openReservation: click}),
-  setShowReservationPlace: (click) => set({showReservationPlace: click})
+  setShowReservationPlace: (click) => set({showReservationPlace: click}),
+  setOpenPanelSearch: (click) => set({ openPanelSearch:click }),
 }));

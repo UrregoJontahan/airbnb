@@ -10,7 +10,7 @@ export function InputSearchMobile (){
     const handleClckLocationInputSearch = () => {
         setOpenSuggetions(true)
         setClosed(false)
-    }
+    } 
 
     return(
         <div>

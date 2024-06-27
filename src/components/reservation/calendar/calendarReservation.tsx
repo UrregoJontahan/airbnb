@@ -69,8 +69,10 @@ export const CalendarReservation = () => {
 
   return (
     <div className="md:flex md:absolute md:top-20 md:flex-col">
-      <div className='md:flex md:flex-nowrap flex flex-col'>
-        <div className='md:flex md:h-96 justify-center mt-4'>
+      <div className='md:flex md:flex-nowrap'>
+        <div className='h-96 mb-4 mt-1 overflow-x-hidden overflow-y-auto md:h-auto md:flex md:mb-3 md:mt-0 '>
+          <Calendar className={`week fixed w-full pr-4 md:hidden`}/>
+        <div className='md:flex md:h-96 w-96 md:justify-center mt-16 md:mt-0'>
           <Calendar
             onChange={handleDateChange}
             value={[arrival, departure]}
@@ -80,9 +82,9 @@ export const CalendarReservation = () => {
             showDoubleView={false}
             className={`calendar-arrival`}
             tileClassName={tileClassName}
-          />
+            />
         </div>
-        <div className='md:flex md:h-96 justify-center'>
+        <div className='md:flex md:h-96 w-96'>
           <Calendar
             onChange={handleDateChange}
             value={[arrival, departure]}
@@ -90,12 +92,13 @@ export const CalendarReservation = () => {
             activeStartDate={viewDateNext}
             onActiveStartDateChange={handleActiveStartDateChange}
             showDoubleView={false}
-            className={`calendar-departure`}
+            className={`calendar-departure no-weeks`}
             tileClassName={tileClassName}
-          />
+            />
         </div>
+            </div>
       </div>
-      {/* <TagsCalendar /> */}
+      <TagsCalendar />
     </div>
   );
 };

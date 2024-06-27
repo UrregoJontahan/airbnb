@@ -23,43 +23,45 @@ export function TagsCalendar() {
     }
 
     return (
-        <div className='md:flex md:gap-4 md:ml-16 md:relative md:bottom-6'>
-            <button 
-                className={`text-sm ${tags.selectedTagDate && "border-black border-2"} border-gray-300 p-2 rounded-full`} 
-                onClick={() => handleClick('selectedTagDate')}
-            >
-                Fechas exactas
-            </button>
-            <button 
-                className={`text-sm ${tags.tagOne && "border-black border-2"} border-gray-300 p-2 rounded-full`} 
-                onClick={() => handleClick('tagOne')}
-            >
-                +1 día
-            </button>
-            <button 
-                className={`text-sm ${tags.tagTwo && "border-black border-2"} border-gray-300 p-2 rounded-full`} 
-                onClick={() => handleClick('tagTwo')}
-            >
-                +2 días
-            </button>
-            <button 
-                className={`text-sm ${tags.tagThree && "border-black border-2"} border-gray-300 p-2 rounded-full`} 
-                onClick={() => handleClick('tagThree')}
-            >
-                +3 días
-            </button>
-            <button 
-                className={`text-sm border-gray-300 p-2 rounded-full ${tags.tagFive && "border-black"}` } 
-                onClick={() => handleClick('tagFive')}
-            >
-                +5 días
-            </button>
-            <button 
-                className={`text-sm ${tags.tagSeven && "border-black border-2"} border-gray-300 p-2 rounded-full`} 
-                onClick={() => handleClick('tagSeven')}
-            >
-                +7 días
-            </button>
+        <div className="h-12 overflow-hidden">
+            <div className='md:flex md:gap-4 md:ml-16 md:relative md:bottom-8 flex overflow-x-auto gap-4 ml-6 pb-2'>
+                <button 
+                    className={`${tags.selectedTagDate ? "border-2 border-black focus:border-black" : "border-2 border-gray-300" }text-base p-2 rounded-full whitespace-nowrap`} 
+                    onClick={() => handleClick('selectedTagDate')}
+                >
+                    Fechas exactas
+                </button>
+                <button 
+                    className={`${tags.tagOne ? "border-2 border-black focus:border-black" : "border-2 border-gray-300"}text-base p-2 rounded-full whitespace-nowrap`} 
+                    onClick={() => handleClick('tagOne')}
+                >
+                    +1 día
+                </button>
+                <button 
+                    className={`${tags.tagTwo ? "border-2 border-black focus:border-black" : "border-2 border-gray-300" }text-base  p-2 rounded-full whitespace-nowrap`} 
+                    onClick={() => handleClick('tagTwo')}
+                >
+                    +2 días
+                </button>
+                <button 
+                    className={`${tags.tagThree ? "border-2 border-black focus:border-black" : "border-2 border-gray-300" }text-base  p-2 rounded-full whitespace-nowrap`} 
+                    onClick={() => handleClick('tagThree')}
+                >
+                    +3 días
+                </button>
+                <button 
+                    className={`${tags.tagFive ? "border-2 border-black focus:border-black" : "border-2 border-gray-300" }text-base  p-2 rounded-full whitespace-nowrap` } 
+                    onClick={() => handleClick('tagFive')}
+                >
+                    +5 días
+                </button>
+                <button 
+                    className={`${tags.tagSeven ? "border-2 border-black focus:border-black" : "border-2 border-gray-300" }text-base  p-2 rounded-full whitespace-nowrap`} 
+                    onClick={() => handleClick('tagSeven')}
+                >
+                    +7 días
+                </button>
+            </div>
         </div>
     )
 }

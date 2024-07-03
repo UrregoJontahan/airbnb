@@ -8,11 +8,11 @@
 
   @media (max-width: 740px){
     .react-calendar {
-      width: 75%;
+      width: 65%;
       background: white;
       font-family: Arial, Helvetica, sans-serif;
-      margin-left: 1rem;
-      }
+      margin-left: 1.7rem;
+    }
 
       .react-calendar__month-view__weekdays__weekday {
         display: none;
@@ -22,19 +22,58 @@
         display: flex;
         justify-content: space-around;
         text-align: center;
-        font-size: 0.8rem;
+        font-size: 0.5rem;
         font-weight: bold;
         color: gray;
-        margin: 2px 0;
-        
+      }
+
+      .react-calendar__navigation {
+        display: flex;
+        align-items: center;
+        height: 2rem;
+        font-size: 10px;
+      }
+
+      .react-calendar__navigation__label{
+        font-size: 0.3rem;
+      }
+      
+      .react-calendar__navigation button{
+        font-weight: 500;
+        display: flex;
+        justify-content: start;
+        font-size: 10px;
+      }
+
+      .react-calendar__navigation__arrow {
+        display: none;
+        opacity: 0;
+      }
+
+     .react-calendar__navigation button.react-calendar__navigation__next-button {
+        display: none;
+      }
+
+      .react-calendar__month-view__days{
+        margin-top: -8px;
+        padding-top: 8px;
+      }
+
+      .react-calendar__tile{
+        height: 1rem; 
+        font-size: 13px;
+        padding: 0;
+        margin: 0; 
       }
 
       .week{
         .react-calendar__month-view__weekdays__weekday{
           display: flex;
-          margin-top: 1rem;
-          margin-left: .3rem;
           background-color: white;
+          height: 2rem;
+          justify-content: center;
+          align-items: start;
+          padding-top: 5px;
         }
         
         .react-calendar__navigation {
@@ -57,7 +96,7 @@
   visibility: hidden;
 }
   
-  .react-calendar button {
+.react-calendar button {
   margin: 0;
   border: 0;
   outline: none;
@@ -91,7 +130,6 @@
 .react-calendar__navigation button:enabled:hover {
   cursor: pointer;
 }
-
 
 .calendar-arrival .react-calendar__navigation button.react-calendar__navigation__next-button {
   display: none;

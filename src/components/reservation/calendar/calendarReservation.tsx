@@ -20,6 +20,8 @@ export const CalendarReservation = () => {
   const [arrival, setArrival] = useState(arrivalDate || null);
   const [departure, setDeparture] = useState(departureDate || null);
   const [viewDate, setViewDate] = useState(new Date());
+  const [additionalMonths, setAdditionalMonths] = useState(2);
+  const [showMoreMonths, setShowMoreMonths] = useState(false);
   const [viewDateNext, setViewDateNext] = useState(() => {
     const nextMonth = new Date();
     nextMonth.setMonth(nextMonth.getMonth() + 1);
@@ -35,7 +37,7 @@ export const CalendarReservation = () => {
     }
   }, [arrivalDate, departureDate]);
 
-  const handleDateChange = (date:any) => {
+  const handleDateChange = (date: any) => {
     if (openArrive) {
       setArrival(date);
       setArrivalDate(date);
@@ -67,36 +69,70 @@ export const CalendarReservation = () => {
     return null;
   };
 
-  return (
-    <div className="md:flex md:absolute md:top-20 md:flex-col">
-      <div className='md:flex md:flex-nowrap'>
-        <div className='h-96 mb-4 mt-1 overflow-x-hidden overflow-y-auto md:h-auto md:flex md:mb-3 md:mt-0 '>
-          <Calendar className={`week fixed w-full pr-4 md:hidden`}/>
-        <div className='md:flex md:h-96 w-96 md:justify-center mt-16 md:mt-0'>
+  const handleClickButtonShowMore = () => {
+    setAdditionalMonths((prev) => prev + 1);
+    setShowMoreMonths(true);
+  };
+
+  const renderAdditionalMonths = () => {
+    const calendars = [];
+    for (let i = 2; i <= additionalMonths; i++) {
+      const nextMonth = new Date(viewDate);
+      nextMonth.setMonth(nextMonth.getMonth() + i);
+      calendars.push(
+        <div key={i} className='md:flex md:h-96 w-96 md:mb-0'>
           <Calendar
             onChange={handleDateChange}
             value={[arrival, departure]}
             minDate={new Date()}
-            activeStartDate={viewDate}
-            onActiveStartDateChange={handleActiveStartDateChange}
-            showDoubleView={false}
-            className={`calendar-arrival`}
-            tileClassName={tileClassName}
-            />
-        </div>
-        <div className='md:flex md:h-96 w-96'>
-          <Calendar
-            onChange={handleDateChange}
-            value={[arrival, departure]}
-            minDate={new Date()}
-            activeStartDate={viewDateNext}
+            activeStartDate={nextMonth}
             onActiveStartDateChange={handleActiveStartDateChange}
             showDoubleView={false}
             className={`calendar-departure no-weeks`}
             tileClassName={tileClassName}
-            />
+          />
         </div>
-            </div>
+      );
+    }
+    return calendars;
+  };
+
+  return (
+    <div className="md:flex md:absolute md:top-20 md:flex-col">
+      <div className='md:flex md:flex-nowrap'>
+        <div className='h-96 overflow-x-hidden overflow-y-auto md:h-auto md:flex md:mb-3 md:mt-0 '>
+          <div className='h-9 w-96 border-b fixed flex items-start overflow-hidden md:hidden'>
+            <Calendar className={`week md:hidden`}/>
+          </div>
+          <div className='md:flex md:h-96 w-96 md:justify-center mt-12 md:mt-0'>
+            <Calendar
+              onChange={handleDateChange}
+              value={[arrival, departure]}
+              minDate={new Date()}
+              activeStartDate={viewDate}
+              onActiveStartDateChange={handleActiveStartDateChange}
+              showDoubleView={false}
+              className={`calendar-arrival`}
+              tileClassName={tileClassName}
+            />
+          </div>
+          <div className='md:flex md:h-96 w-96 md:mb-0'>
+            <Calendar
+              onChange={handleDateChange}
+              value={[arrival, departure]}
+              minDate={new Date()}
+              activeStartDate={viewDateNext}
+              onActiveStartDateChange={handleActiveStartDateChange}
+              showDoubleView={false}
+              className={`calendar-departure no-weeks`}
+              tileClassName={tileClassName}
+            />
+          </div>
+          {showMoreMonths && renderAdditionalMonths()}
+          <div className='md:hidden '>
+            <button className='border w-full border-black rounded-md font-medium text-black pb-3 pt-3' onClick={handleClickButtonShowMore}> Cargar más Fechas</button>
+          </div>
+        </div>
       </div>
       <TagsCalendar />
     </div>

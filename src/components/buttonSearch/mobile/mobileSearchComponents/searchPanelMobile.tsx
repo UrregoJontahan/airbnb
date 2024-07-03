@@ -3,6 +3,7 @@ import { MobileCalendarReservation } from "../mobileCalendarReservation/mobileCa
 import { MobileReservationPlace } from "../mobileReservationPlace/mobileReservationPlace";
 import { useStore } from "app/app/lib/stateChangeButtonSearch";
 import { FormReservationNumberPeople } from "../formReservationPeople/formResevationPeople";
+import { OptionClearOrSearch } from "../OptionSearchOrClearSearch/ClearOrSearchSearch";
 
 export function   SearchPanelMobile (){
     const { } = useStore()
@@ -13,6 +14,7 @@ export function   SearchPanelMobile (){
             <MobileReservationPlace/>
             <MobileCalendarReservation/>
             <FormReservationNumberPeople/>
+            <OptionClearOrSearch/>
         </div> 
     )
 }

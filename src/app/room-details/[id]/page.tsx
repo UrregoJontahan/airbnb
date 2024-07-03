@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { fetchRoomsById } from "app/app/services/getRooms";
-import { ArrowBack } from "app/components/mobile/arrowBack/arrowBack";
+import { ArrowBack } from "app/components/buttonSearch/mobile/arrowBack/arrowBack";
 import { Calification } from "app/components/calification/calification";
 import { UserHost } from "app/components/shared/profileUser/userHost/userHost";
 import { IconsReference } from "app/components/IconsAdReference/iconsAndReference";

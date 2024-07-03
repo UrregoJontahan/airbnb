@@ -19,6 +19,7 @@ interface State {
   showReservationPlace:boolean,
   openPanelSearch:boolean,
   openFormNumberPeople:boolean,
+  noShow:boolean,
   setOpenWhere: (open: boolean) => void;
   setOpenarrive: (open: boolean) => void;
   setOpenExit: (open:boolean) => void;
@@ -37,6 +38,7 @@ interface State {
   setShowReservationPlace: (click:boolean) => void;
   setOpenPanelSearch: ( click: boolean) => void;
   setOpenFormNumberPeople: (click:boolean) => void;
+  setNoShow: (click:boolean) => void;
 }
 
 export const useStore = create<State>(( set:any) => ({
@@ -58,6 +60,7 @@ export const useStore = create<State>(( set:any) => ({
   showReservationPlace:true,
   openPanelSearch:false,
   openFormNumberPeople:false,
+  noShow:false,
   setOpenWhere: (open) => set({ openWhere: open }),
   setOpenarrive: (open) => set({ openArrive: open }),
   setOpenExit:(open)=> set({openExit:open}),
@@ -76,4 +79,5 @@ export const useStore = create<State>(( set:any) => ({
   setShowReservationPlace: (click) => set({showReservationPlace: click}),
   setOpenPanelSearch: (click) => set({ openPanelSearch:click }),
   setOpenFormNumberPeople: (click) => set({openFormNumberPeople: click}) ,
+  setNoShow: (click) => set ({ noShow: click })
 }));

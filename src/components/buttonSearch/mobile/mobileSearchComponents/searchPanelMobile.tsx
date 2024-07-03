@@ -2,8 +2,9 @@ import { TagsMobile } from "./tagsMobile/tagsMobile";
 import { MobileCalendarReservation } from "../mobileCalendarReservation/mobileCalendarReservation";
 import { MobileReservationPlace } from "../mobileReservationPlace/mobileReservationPlace";
 import { useStore } from "app/app/lib/stateChangeButtonSearch";
+import { FormReservationNumberPeople } from "../formReservationPeople/formResevationPeople";
 
-export function   SearchPanelMobile (){ 
+export function   SearchPanelMobile (){
     const { } = useStore()
   
     return (
@@ -11,6 +12,7 @@ export function   SearchPanelMobile (){
             <TagsMobile/>
             <MobileReservationPlace/>
             <MobileCalendarReservation/>
+            <FormReservationNumberPeople/>
         </div> 
     )
 }

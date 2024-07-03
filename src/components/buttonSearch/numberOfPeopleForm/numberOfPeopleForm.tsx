@@ -17,12 +17,12 @@ export function NumberOfPeopleForm() {
     };
 
     return (
-        <div className="w-1/5 h-2/5 bg-white absolute z-20 top-36 mt-2 rounded-3xl border border-gray-300 shadow-lg shadow-gray-400 flex justify-center">
-            <div className="flex flex-col mt-4">
-                <div className="flex gap-4 pt-5 pb-5 border-b">
+        <div className="md:w-1/5 md:h-2/5 bg-white md:absolute md:z-20 md:top-36 md:mt-2 md:rounded-3xl md:border md:border-gray-300 md:shadow-lg md:shadow-gray-400 md:flex md:justify-center">
+            <div className="flex flex-col md:mt-4 p-4 md:p-0">
+                <div className="flex md:gap-4 gap-2 md:pt-5 md:pb-5 pb-2 border-b">
                     <div className="flex flex-col">
                         <h2 className="font-semibold">Adultos</h2>
-                        <p className="text-gray-400">Edad: de 13 años o más</p>
+                        <p className="text-gray-400 md:text-base text-sm">Edad: de 13 años o más</p>
                     </div>
                     <div className="flex items-center ml-auto">
                         <button
@@ -41,10 +41,10 @@ export function NumberOfPeopleForm() {
                         </button>
                     </div>
                 </div>
-                <div className="flex gap-4 pt-5 pb-5 border-b">
+                <div className="flex gap-4 md:pt-5 pt-2 md:pb-5 pb-2 border-b">
                     <div className="flex flex-col">
                         <h2 className="font-semibold">Niños</h2>
-                        <p className="text-gray-400">Edades 2-12</p>
+                        <p className="text-gray-400 md:text-base text-sm">Edades 2-12</p>
                     </div>
                     <div className="flex items-center ml-auto">
                         <button
@@ -63,10 +63,10 @@ export function NumberOfPeopleForm() {
                         </button>
                     </div>
                 </div>
-                <div className="flex gap-4 pt-5 pb-5 border-b">
+                <div className="flex gap-4 md:pt-5 pt-2 md:pb-5 pb-2 border-b">
                     <div className="flex flex-col">
                         <h2 className="font-semibold">Bebés</h2>
-                        <p className="text-gray-400">Menos de 2 años</p>
+                        <p className="text-gray-400 md:text-base text-sm">Menos de 2 años</p>
                     </div>
                     <div className="flex items-center ml-auto">
                         <button
@@ -85,12 +85,12 @@ export function NumberOfPeopleForm() {
                         </button>
                     </div>
                 </div>
-                <div className="flex gap-4 pt-5 pb-5">
+                <div className="flex flex-col md:flex-nowrap gap-4 md:pt-5 pt-2 md:pb-5">
                     <div className="flex flex-col">
                         <h2 className="font-semibold">Mascotas</h2>
                         <a href="#" className="underline text-gray-500 font-semibold">¿Traes un animal de servicio?</a>
                     </div>
-                    <div className="flex items-center ml-auto">
+                    <div className="flex items-center mr-auto md:ml-auto md:mr-0">
                         <button
                             className={`hover:border-black text-gray-800 font-bold py-1 px-3 border rounded-full ${pets === 0 && 'cursor-not-allowed'}`}
                             onClick={() => handleDecrement(setPets, pets)}

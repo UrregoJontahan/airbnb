@@ -3,7 +3,7 @@ import { FaSearch } from "react-icons/fa";
 import { SearchPanelMobile } from "./mobileSearchComponents/searchPanelMobile";
 import { useStore } from "app/app/lib/stateChangeButtonSearch";
 
-export function ButtonSearchMobile() {
+export function ButtonSearchMobile() { 
     const {setOpenPanelSearch, openPanelSearch} = useStore()
 
     const handleClickButtonSearch = () =>{

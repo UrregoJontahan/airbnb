@@ -23,7 +23,7 @@ export function TagsCalendar() {
     }
 
     return (
-        <div className="h-12 overflow-hidden md:overflow-visible border-t md:border-0">
+        <div className="h-12 overflow-hidden md:overflow-visible border-t md:border-0 relative bottom-3 bg-white">
             <div className='md:flex md:gap-4 md:ml-16 md:relative md:bottom-10 flex overflow-x-auto gap-4 ml-6 pb-2 pt-2'>
                 <button 
                     className={`${tags.selectedTagDate ? "border-2 border-black focus:border-black text-sm" : "border-2 border-gray-300 text-sm" } p-2 rounded-full whitespace-nowrap`} 

@@ -4,11 +4,12 @@ import { useStore } from "app/app/lib/stateChangeButtonSearch"
 
 export function MobileReservationPlace (){
 
-    const { showReservationPlace, setShowReservationPlace, setOpenReservation } = useStore()
+    const { showReservationPlace, setShowReservationPlace, setOpenReservation,setOpenFormNumberPeople } = useStore()
 
     const handleClickReservationPLace = () => {
         setShowReservationPlace(true)
         setOpenReservation(false)
+        setOpenFormNumberPeople(false)
     }
 
     return(

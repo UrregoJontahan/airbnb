@@ -3,6 +3,7 @@ import Calendar from 'react-calendar';
 import 'app/app/styles/calendarStyles.css';
 import { TagsCalendar } from 'app/components/buttonSearch/ReservationDates/TagsCalendar/tagsCalendar';
 import { useStore } from 'app/app/lib/stateChangeButtonSearch';
+import { OptionsSkipAndNext } from 'app/components/buttonSearch/mobile/sectionSkip/optionSkipAndNext';
 
 export const CalendarReservation = () => {
   const {
@@ -102,9 +103,9 @@ export const CalendarReservation = () => {
       <div className='md:flex md:flex-nowrap'>
         <div className='h-96 overflow-x-hidden overflow-y-auto md:h-auto md:flex md:mb-3 md:mt-0 '>
           <div className='h-9 w-96 border-b fixed flex items-start overflow-hidden md:hidden'>
-            <Calendar className={`week md:hidden`}/>
+            <Calendar className={`week md:hidden z-50`}/>
           </div>
-          <div className='md:flex md:h-96 w-96 md:justify-center mt-12 md:mt-0'>
+          <div className='md:flex md:h-96 w-96 h-68 md:justify-center mt-12 md:mt-0'>
             <Calendar
               onChange={handleDateChange}
               value={[arrival, departure]}
@@ -116,7 +117,7 @@ export const CalendarReservation = () => {
               tileClassName={tileClassName}
             />
           </div>
-          <div className='md:flex md:h-96 w-96 md:mb-0'>
+          <div className='md:flex md:h-96 w-96 md:mb-0 relative bottom-3'>
             <Calendar
               onChange={handleDateChange}
               value={[arrival, departure]}
@@ -129,12 +130,13 @@ export const CalendarReservation = () => {
             />
           </div>
           {showMoreMonths && renderAdditionalMonths()}
-          <div className='md:hidden '>
+          <div className='md:hidden relative bottom-4'>
             <button className='border w-full border-black rounded-md font-medium text-black pb-3 pt-3' onClick={handleClickButtonShowMore}> Cargar más Fechas</button>
           </div>
         </div>
       </div>
       <TagsCalendar />
+      <OptionsSkipAndNext/>
     </div>
   );
 };

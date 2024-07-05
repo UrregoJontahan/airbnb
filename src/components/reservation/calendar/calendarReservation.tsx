@@ -21,7 +21,7 @@ export const CalendarReservation = () => {
   const [arrival, setArrival] = useState(arrivalDate || null);
   const [departure, setDeparture] = useState(departureDate || null);
   const [viewDate, setViewDate] = useState(new Date());
-  const [additionalMonths, setAdditionalMonths] = useState(2);
+  const [additionalMonths, setAdditionalMonths] = useState(1);
   const [showMoreMonths, setShowMoreMonths] = useState(false);
   const [viewDateNext, setViewDateNext] = useState(() => {
     const nextMonth = new Date();
@@ -74,14 +74,13 @@ export const CalendarReservation = () => {
     setAdditionalMonths((prev) => prev + 1);
     setShowMoreMonths(true);
   };
-
+  
   const renderAdditionalMonths = () => {
-    const calendars = [];
-    for (let i = 2; i <= additionalMonths; i++) {
+    const calendars:any = [];
       const nextMonth = new Date(viewDate);
-      nextMonth.setMonth(nextMonth.getMonth() + i);
+      nextMonth.setMonth(nextMonth.getMonth() + additionalMonths);
       calendars.push(
-        <div key={i} className='md:flex md:h-96 w-96 md:mb-0'>
+        <div className='md:flex md:h-96 w-96 h-68 md:justify-center mt-12 md:mt-0'>
           <Calendar
             onChange={handleDateChange}
             value={[arrival, departure]}
@@ -89,19 +88,18 @@ export const CalendarReservation = () => {
             activeStartDate={nextMonth}
             onActiveStartDateChange={handleActiveStartDateChange}
             showDoubleView={false}
-            className={`calendar-departure no-weeks`}
+            className={`calendar-arrival`}
             tileClassName={tileClassName}
           />
-        </div>
+      </div>
       );
-    }
-    return calendars;
+      console.log()
+      return calendars
   };
-
   return (
     <div className="md:flex md:absolute md:top-20 md:flex-col">
       <div className='md:flex md:flex-nowrap'>
-        <div className='h-96 overflow-x-hidden overflow-y-auto md:h-auto md:flex md:mb-3 md:mt-0 '>
+        <div className='h-96 overflow-x-hidden overflow-y-auto md:h-auto md:flex md:mb-3 md:mt-0 pt-2 '>
           <div className='h-9 w-96 border-b fixed flex items-start overflow-hidden md:hidden'>
             <Calendar className={`week md:hidden z-50`}/>
           </div>

@@ -3,11 +3,12 @@ import { FaArrowLeft } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 
 export function TagsMobile (){
-    const { setClosed, setShowSuggestions, showSuggestions, setOpenPanelSearch } = useStore()
+    const { setClosed, setShowSuggestions, showSuggestions, setOpenPanelSearch,setSuggestionsAddress } = useStore()
 
     const handleClickCloseSearch = () => {
         setClosed(true)
         setShowSuggestions(false)
+        setSuggestionsAddress(false)
     }
 
     const handelClickClosedPanelSearch = () => {

@@ -15,7 +15,7 @@ export function MobileReservationPlace (){
     return(
         <div>
           {showReservationPlace ?
-            <div className="w-11/12 border ml-3 p-2 border-gray-200 rounded-2xl shadow-md shadow-gray-300 bg-white mt-4 h-auto">
+            <div className="w-11/12 border ml-3 p-2 border-gray-200 rounded-2xl shadow-md shadow-gray-300 bg-white mt-4 h-auto z-50">
                 <InputSearchMobile/>
                 <ContainerMaps/>
             </div> :

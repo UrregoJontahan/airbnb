@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { OptionsSkipAndNext } from '../../mobile/sectionSkip/optionSkipAndNext';
 
 export const VolumeButton = () => {
   const [volume, setVolume] = useState<number>(0);
@@ -19,9 +20,9 @@ const handleDecrement = (setter: React.Dispatch<React.SetStateAction<number>>, v
 };
 
   return (
-  <div>
-    <div className='hidden md:block'>
-      <div className='absolute top-24 flex'>
+  <div className="md:flex md:absolute md:flex-col md:justify-center md:w-11/12">
+    <div className='hidden md:block relative md:top-24'>
+      <div className=''>
         <div className="flex flex-col items-center justify-center">
           <h2 className="text-xl font-semibold m-8">¿Cuándo es tu viaje?</h2>
           <div className="relative flex items-center justify-center w-48 h-48">
@@ -65,12 +66,15 @@ const handleDecrement = (setter: React.Dispatch<React.SetStateAction<number>>, v
           </button>
         </div>
       </div>
-      <div>
-        <p>Fecha de inicio</p>
-        <button>
-          <p></p>
+      <div className='flex p-3 items-center border-t md:hidden'>
+        <p className=' font-semibold text-lg'>Fecha de inicio</p>
+        <button className='ml-auto p-3'>
+          <p className=' font-semibold underline underline-offset-4 decoration-black text-lg'>1 de agosto</p>
         </button>
       </div>
+    </div>
+    <div className=" pt-64 md:hidden">
+      <OptionsSkipAndNext/>
     </div>
   </div>
   );

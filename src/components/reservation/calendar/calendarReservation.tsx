@@ -22,7 +22,8 @@ export const CalendarReservation = () => {
   const [departure, setDeparture] = useState(departureDate || null);
   const [viewDate, setViewDate] = useState(new Date());
   const [additionalMonths, setAdditionalMonths] = useState(1);
-  const [showMoreMonths, setShowMoreMonths] = useState(false);
+  const [showMoreMonths, setShowMoreMonths] = useState<any>(false);
+  const [calendar, setCalendar ] =useState<any>([])
   const [viewDateNext, setViewDateNext] = useState(() => {
     const nextMonth = new Date();
     nextMonth.setMonth(nextMonth.getMonth() + 1);
@@ -73,14 +74,10 @@ export const CalendarReservation = () => {
   const handleClickButtonShowMore = () => {
     setAdditionalMonths((prev) => prev + 1);
     setShowMoreMonths(true);
-  };
-  
-  const renderAdditionalMonths = () => {
-    const calendars:any = [];
-      const nextMonth = new Date(viewDate);
-      nextMonth.setMonth(nextMonth.getMonth() + additionalMonths);
-      calendars.push(
-        <div className='md:flex md:h-96 w-96 h-68 md:justify-center mt-12 md:mt-0'>
+    const nextMonth = new Date(viewDateNext);
+    nextMonth.setMonth(nextMonth.getMonth() + additionalMonths);
+    let updateCalendar = [...calendar,
+      <div className='md:flex md:h-96 w-96 md:mb-0 relative bottom-3'>
           <Calendar
             onChange={handleDateChange}
             value={[arrival, departure]}
@@ -90,12 +87,12 @@ export const CalendarReservation = () => {
             showDoubleView={false}
             className={`calendar-arrival`}
             tileClassName={tileClassName}
-          />
+            />
       </div>
-      );
-      console.log()
-      return calendars
+      ]
+      setCalendar(updateCalendar)
   };
+  
   return (
     <div className="md:flex md:absolute md:top-20 md:flex-col">
       <div className='md:flex md:flex-nowrap'>
@@ -115,7 +112,7 @@ export const CalendarReservation = () => {
               tileClassName={tileClassName}
             />
           </div>
-          <div className='md:flex md:h-96 w-96 md:mb-0 relative bottom-3'>
+          <div className='md:flex md:h-96 w-96 md:mb-0 relative bottom-3 md:bottom-0 ml-3 m:ml-0'>
             <Calendar
               onChange={handleDateChange}
               value={[arrival, departure]}
@@ -127,7 +124,7 @@ export const CalendarReservation = () => {
               tileClassName={tileClassName}
             />
           </div>
-          {showMoreMonths && renderAdditionalMonths()}
+          {showMoreMonths && calendar}
           <div className='md:hidden relative bottom-4'>
             <button className='border w-full border-black rounded-md font-medium text-black pb-3 pt-3' onClick={handleClickButtonShowMore}> Cargar más Fechas</button>
           </div>

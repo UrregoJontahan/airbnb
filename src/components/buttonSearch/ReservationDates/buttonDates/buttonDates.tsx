@@ -34,8 +34,8 @@ export const ButtonDates: React.FC = () => {
   };
 
   return (
-    <div className="w-full flex justify-center md:mt-8 h-auto">
-      <div className="h-10 flex justify-around border items-center rounded-full bg-gray-200">
+    <div className="w-full flex justify-center md:mt-8 h-auto z-50">
+      <div className="h-11 flex justify-around border items-center rounded-full bg-gray-100 pb-1 pt-1">
         <button 
           className={`rounded-full pt-1 pb-1 pl-6 pr-6 font-semibold flex ml-1 mr-1 ${!openDates && "hover:bg-gray-300"} ${openDates && "bg-white"}`} 
           onClick={handleClickDates}
@@ -49,7 +49,7 @@ export const ButtonDates: React.FC = () => {
           Meses
         </button>
         <button 
-          className={`rounded-full pt-1 pb-1 pl-6 pr-6 font-semibold flex mr-1 ${!openFlex && "hover:bg-gray-300"} ${openFlex && "bg-white"}`} 
+          className={`rounded-full pt-1 pb-1 pl-6 pr-6 ml-1 font-semibold flex mr-1 ${!openFlex && "hover:bg-gray-300"} ${openFlex && "bg-white"}`} 
           onClick={handleClickFlex}
         >
           Flexible

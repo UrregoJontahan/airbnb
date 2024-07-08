@@ -26,11 +26,11 @@ export const YearMonthContainers: React.FC = () => {
   }, [currentYear, endYear]);
 
   return (
-    <div className='h-36 w-full overflow-hidden'>
-        <div className="flex gap-4 w-full h-44 overflow-hidden overflow-x-auto p-4">
+    <div className='h-40 overflow-hidden'>
+        <div className="flex md:gap-4 h-44 overflow-hidden overflow-x-auto p-4 gap-2">
             {months.map((month, index) => (
-                <div key={index} className="flex justify-center flex-col border text-center w-36 p-6 rounded-lg cursor-pointer hover:border-black focus:border-2">
-                    <CiCalendar className='text-4xl w-12 h-16'/>
+                <div key={index} className="flex justify-center flex-col border text-center pl-8 pr-8 rounded-lg cursor-pointer hover:border-black focus:border-2">
+                    <CiCalendar className='text-4xl ml-2 md:w-12 md:h-16'/>
                     <p className='text-base font-semibold'>{month.monthName}</p>
                     <p className='text-base'>${month.year}</p>
                 </div>

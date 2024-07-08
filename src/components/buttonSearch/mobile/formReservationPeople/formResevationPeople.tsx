@@ -1,9 +1,16 @@
 import { useStore } from "app/app/lib/stateChangeButtonSearch"
 import { NumberOfPeopleForm } from "../../numberOfPeopleForm/numberOfPeopleForm"
+import { motion } from "framer-motion";
 
 export function FormReservationNumberPeople (){
 
-    const { setOpenReservation, setShowReservationPlace, setOpenFormNumberPeople, openFormNumberPeople } = useStore()
+    const { 
+        setOpenReservation, 
+        setShowReservationPlace, 
+        setOpenFormNumberPeople, 
+        openFormNumberPeople,
+        openPanelSearch,
+    } = useStore()
 
     const handleClickOnAddGuest = () => {
         setOpenFormNumberPeople(true)
@@ -12,7 +19,14 @@ export function FormReservationNumberPeople (){
     }
 
     return(
-        <div> 
+        <motion.div
+        initial={{ opacity: 0, y: -80 }}
+        animate={{
+        opacity: openPanelSearch ? 1 : 0,
+        y: openPanelSearch ? 0 : 50,
+        }}
+        transition={{ duration: 0.5 }}
+        > 
             { openFormNumberPeople ? 
                 <div className="w-11/12 border ml-3 p-2 border-gray-200 rounded-2xl shadow-md shadow-gray-400 bg-white mt-2 h-auto">
                     <h2 className="text-2xl font-semibold ml-3 mt-2">¿Quién te acompaña?</h2>
@@ -26,6 +40,6 @@ export function FormReservationNumberPeople (){
                 </div>
             }
             
-        </div>
+        </motion.div>
     )
 }

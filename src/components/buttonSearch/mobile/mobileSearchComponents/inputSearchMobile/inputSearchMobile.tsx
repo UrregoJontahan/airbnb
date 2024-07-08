@@ -4,17 +4,18 @@ import { LocationSearchInput } from "app/components/buttonSearch/locationSearchI
 import { SuggestionLocation } from "app/components/buttonSearch/reservationPlace/suggestionLocation/suggestionLocation"
 
 export function InputSearchMobile (){
-    const { address, setAddress, closed, setClosed } = useStore()
+    const { address, setAddress, closed, setClosed, setSuggestionsAddress } = useStore()
     const [ openSuggestions, setOpenSuggetions ] = useState(false)
 
     const handleClckLocationInputSearch = () => {
         setOpenSuggetions(true)
         setClosed(false)
-    }
+        setSuggestionsAddress(true)
+    } 
 
     return(
         <div>
-            <div className="w-full p-2 bg-white h-auto ">
+            <div className="w-full  bg-white h-auto ">
                 <h2 className={`text-2xl font-semibold m-3 ${closed ? "¿A donde quieres ir?" : "hidden"}`}>¿A donde quieres ir?</h2>
                 <div onClick={handleClckLocationInputSearch} className={`${openSuggestions && "mt-8"}`}>
                     <LocationSearchInput/>

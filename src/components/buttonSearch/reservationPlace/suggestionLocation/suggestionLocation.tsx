@@ -34,7 +34,7 @@ export function SuggestionLocation({ address, setAddress }: any) {
         <ul key={index} className="m-4">
           <li onClick={() => handleSelectSuggestion(place)} className="p-2 hover:bg-gray-100 cursor-pointer text-black flex truncate text-ellipsis">
            <div className="flex w-8 h-8 items-center justify-center bg-gray-300 rounded-lg">
-                <MdOutlinePlace className="" />
+                <MdOutlinePlace />
             </div> 
             <p className="truncate text-ellipsis ml-4">{place}</p>
           </li>

@@ -1,12 +1,12 @@
 import { VscSettings } from "react-icons/vsc";
 import { FaSearch } from "react-icons/fa";
-import { useState } from "react";
 import { SearchPanelMobile } from "./mobileSearchComponents/searchPanelMobile";
+import { useStore } from "app/app/lib/stateChangeButtonSearch";
 
-export function ButtonSearchMobile() {
-    const  [ openPanelSearch, setOpenPanelSearch ] = useState(false)
+export function ButtonSearchMobile() { 
+    const {setOpenPanelSearch, openPanelSearch} = useStore()
 
-    const handleClickButtonSearch = (e:any) =>{
+    const handleClickButtonSearch = () =>{
         setOpenPanelSearch(true)
     }
 
@@ -32,7 +32,7 @@ export function ButtonSearchMobile() {
             <div className="w-11 h-10 mt-6 mr-2 border border-gray-400 flex justify-center items-center rounded-full relative right-2">
                 <VscSettings className="text-2xl" />
             </div>
-            {openPanelSearch && <SearchPanelMobile/> }
+            {openPanelSearch && <SearchPanelMobile/>}
         </div>
     );
 }

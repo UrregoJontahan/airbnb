@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Calendar from 'react-calendar';
 import 'app/app/styles/calendarStyles.css';
-import { TagsCalendar } from 'app/components/buttonSearch/ReservationDates/TagsCalendar/tagsCalendar';
+import { OffsetDaysCalendar } from 'app/components/buttonSearch/ReservationDates/TagsCalendar/offSetDays';
 import { useStore } from 'app/app/lib/stateChangeButtonSearch';
 import { OptionsSkipAndNext } from 'app/components/buttonSearch/mobile/sectionSkip/optionSkipAndNext';
 
@@ -130,7 +130,7 @@ export const CalendarReservation = () => {
           </div>
         </div>
       </div>
-      <TagsCalendar />
+      <OffsetDaysCalendar/>
       <OptionsSkipAndNext/>
     </div>
   );

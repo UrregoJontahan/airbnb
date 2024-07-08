@@ -10,7 +10,10 @@ export function TagsMobile (){
         showSuggestions, 
         setOpenPanelSearch,
         setSuggestionsAddress,
-        openPanelSearch 
+        openPanelSearch,
+        setShowReservationPlace,
+        setOpenReservation,
+        setOpenFormNumberPeople
     } = useStore()
 
     const handleClickCloseSearch = () => {
@@ -21,6 +24,9 @@ export function TagsMobile (){
 
     const handelClickClosedPanelSearch = () => {
         setOpenPanelSearch(false)
+        setShowReservationPlace(true)
+        setOpenReservation(false)
+        setOpenFormNumberPeople(false)
     }
     
 

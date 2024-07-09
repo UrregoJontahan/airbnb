@@ -1,13 +1,24 @@
+"use client"
+import { useStore } from "app/app/lib/stateChangeButtonSearch";
+import { motion } from "framer-motion"
+
 export function Tags (){
+
+    const { scrolledY } = useStore()
+
     return(
        <div className="hidden md:block">
-         <div className="flex flex-row flex-nowrap list-none">
-            <ul className="flex flex-row flex-nowrap list-none gap-x-10 mx-auto  relative left-16  justify-center text-base text-gray-500 ">
-                  <li className=" hover:text-black cursor-pointer ">Estadias</li>
-                  <li className=" hover:text-black cursor-pointer ">Experiencias</li>
-                  <li className=" hover:text-black cursor-pointer ">Experiencias en linea</li>
-            </ul>
+            <motion.div
+                initial={{opacity:100, y:0}}
+                animate={{opacity: scrolledY ? 0 : 1,
+                    y: scrolledY ? -70 : 0
+                 }}
+            className="flex flex-row flex-nowrap list-none pl-16 pt-3">
+                <ul className="flex flex-row flex-nowrap list-none gap-x-9 mx-auto relative left-16 justify-center text-base text-gray-500 m-8">
+                    <li className=" hover:text-black cursor-pointer text-lg">Estadias</li>
+                    <li className=" hover:text-black cursor-pointer text-lg ">Experiencias</li>
+                </ul>
+            </motion.div>
         </div>
-       </div>
     )
 }

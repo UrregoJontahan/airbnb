@@ -3,9 +3,11 @@
 import { fetchRooms } from "app/app/services/getRooms";
 import { useEffect, useState } from "react";
 import { ImageCarousel } from "../imagesCarousel/ImageCarousel";
+import { useStore } from "app/app/lib/stateChangeButtonSearch";
 
 export function RoomList() {
   const [rooms, setRooms] = useState<any[]>([]);
+  const { scrolledY } = useStore()
 
   useEffect(() => {
     const getRooms = async () => {
@@ -20,7 +22,7 @@ export function RoomList() {
   }, []);
 
   return (
-    <div className="w-full h-auto md:mt-2 flex md:justify-center mb-8">
+    <div className={`w-full h-auto md:mt-2 flex md:justify-center mb-8  ${scrolledY && "relative top-48"}`}>
       <ul className="flex flex-wrap pl-5 md:justify-center list-none">
         {rooms.map((room) => (
           <li key={room.id} className="w-11/12 md:w-72 md:pl-4">

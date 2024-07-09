@@ -17,7 +17,7 @@ export function NumberOfPeopleForm() {
     };
 
     return (
-        <div className="md:w-1/5 md:h-2/5 bg-white md:absolute md:z-20 md:top-36 md:mt-2 md:rounded-3xl md:border 
+        <div className="md:w-1/5 md:h-auto bg-white md:absolute md:z-20 md:top-36 md:mt-2 md:rounded-3xl md:border 
             md:border-gray-300 md:shadow-lg md:shadow-gray-400 md:flex md:justify-center">
             <div className="flex flex-col md:mt-4 p-4 md:p-0">
                 <div className="flex md:gap-4 gap-2 md:pt-5 md:pb-5 pb-2 border-b">

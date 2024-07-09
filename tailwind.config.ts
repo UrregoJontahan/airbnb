@@ -28,6 +28,9 @@ const config: Config = {
         'xl': '1280px',
         '2xl': '1536px',
       },
+      colors:{
+        "custom-pink": 'rgb(255, 56, 92)',
+      },
     },
   },
   plugins: [],

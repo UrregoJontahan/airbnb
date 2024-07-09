@@ -49,7 +49,7 @@ export function ArriveDeparture (){
     return(
         <div className={`flex flex-row items-center rounded-full h-16` }>
             <span
-                className={`${!openArrive && "text-sm font-semibold w-40 h-full pt-3 pl-8 rounded truncate flex flex-col hover:bg-gray-300 hover:rounded-full border-r border-gray-300 cursor-pointer"} 
+                className={`${!openArrive && "text-sm font-semibold w-40 h-full pt-3 pl-8 rounded truncate flex flex-col hover:bg-gray-300 hover:rounded-full border-r border-gray-100 cursor-pointer"} 
                 ${openArrive && "rounded-full shadow-lg bg-white hover:bg-none text-sm font-semibold w-40 h-full border-none pt-3 pl-8 items-center truncate border-r border-gray-300 hover:rounded-full cursor-pointer"}
                 ${openArrive && "border-none"} ${openExit && `border-none`} ${exploreDestinations && "border-none"} ${openWhere && "border-none"}
                 `}
@@ -64,7 +64,7 @@ export function ArriveDeparture (){
               </span>
               {openArrive && <Reservation />}
               {showExitButton && (
-                <span className={`${!openExit && "text-sm font-semibold w-40 h-full pt-3 pl-8 rounded truncate flex flex-col hover:bg-gray-300 hover:rounded-full border-r border-gray-300 cursor-pointer"}
+                <span className={`${!openExit && "text-sm font-semibold w-40 h-full pt-3 pl-8 rounded truncate flex flex-col hover:bg-gray-300 hover:rounded-full border-r border-gray-100 cursor-pointer"}
                 ${openExit && "rounded-full shadow-lg bg-white hover:bg-none text-sm font-semibold w-40 h-full border-none pt-3 pl-8 items-center truncate border-r border-gray-300 hover:rounded-full cursor-pointer"}
                 ${openArrive && "border-none"} ${openExit && `border-none`} ${exploreDestinations && "border-none"} ${openWhere && "border-none"}
                 `}

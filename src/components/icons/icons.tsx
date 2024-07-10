@@ -9,7 +9,7 @@ import { GiFamilyHouse } from "react-icons/gi";
 
 export function Icons() {
   return (
-    <div className={`w-full h-16 flex md:justify-center `}>
+    <div className={`w-full h-16 flex md:justify-center bg-white border-t`}>
       <div className={`h-14 overflow-hidden md:w-full`}>
         <div className={`flex justify-center p-2 w-full border-b md:border-b-0 pt-6 border-gray-300 overflow-x-auto bg-scroll`}>
           <div className={`flex space-x-4 md:space-x-20 ml-20 relative left-40 md:left-0 md:ml-0`}>

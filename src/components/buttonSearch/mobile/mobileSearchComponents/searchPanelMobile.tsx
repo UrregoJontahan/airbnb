@@ -6,7 +6,7 @@ import { OptionClearOrSearch } from "../OptionSearchOrClearSearch/ClearOrSearchS
 
 export function   SearchPanelMobile (){
     return (
-        <div className={`w-screen h-screen fixed top-0 bg-gray-200 z-50`}>
+        <div className={`w-screen h-screen fixed top-0 bg-gray-200 z-40`}>
             <TagsMobile/>
             <MobileReservationPlace/>
             <MobileCalendarReservation/>

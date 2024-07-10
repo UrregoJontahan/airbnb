@@ -13,23 +13,23 @@ import { Icons } from "app/components/icons/index"
     const { scrolledY} = useStore()
 
       return (
-           <div className={`hidden md:block flex-col ${scrolledY && "absolute top-0"}`}>
-            <header className={`flex w-full h-16 ${scrolledY && "fixed md:z-50 top-0"} `}> 
-              <nav className="flex flex-row flex-nowrap list-none items-center w-full justify-between z-40">
+           <div className={`hidden md:block flex-col ${scrolledY && "absolute top-0 "}`}>
+            <header className={`flex w-full h-20 ${scrolledY && "fixed md:z-20 top-0 bg-white"} `}> 
                 <Logo/>
-                <div className="flex pl-20">
+                <div className="flex ml-auto relative bottom-8">
                   <Tags/> 
                 </div>      
-                <div className="flex">
+                <div className="flex ml-auto">
                   <ButtonRommForm/>   
                   <ButtonUser/>
                 </div>
-              </nav>
             </header>
-              <div className={`w-full h-auto bg-white ${scrolledY && "fixed md:z-20"}`}>
+              <div className={`bg-white h-auto ${scrolledY && "fixed md:z-20 left-96 ml-80"}`}>
                 <ButtonSearchPlace/>
-                <Icons/>
               </div>
+                <div className={`w-full h-auto bg-white ${scrolledY && "fixed md:z-10 top-24"}`}>
+                  <Icons/>
+                </div>
            </div>
       )
   }

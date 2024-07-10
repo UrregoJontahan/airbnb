@@ -9,9 +9,9 @@ export function ButtonSearchSmall (){
             initial={{ y:0 }}
             animate={{ y: scrolledY ? -10 : 0 }}
         >
-            <div className="flex justify-center w-auto h-12 mt-8">
-                <div className={`w-auto h-12 rounded-full border border-gray-200 flex items-center shadow-lg shadow-gray-100
-                hover:shadow-md`}>
+            <div className="flex justify-center h-12 w-auto mt-8">
+                <div className={` h-12 rounded-full border border-gray-200 flex items-center shadow-lg shadow-gray-100
+                    hover:shadow-md hover:cursor-pointer bg-white z-50`}>
                     <button className=" font-semibold pl-4 border-r pr-2">En cualquier lugar del mundo</button>
                     <button  className=" font-semibold pl-4 border-r pr-2">Cualquier semana</button>
                     <div className=" flex items-center gap-2 ml-auto pl-4 ">

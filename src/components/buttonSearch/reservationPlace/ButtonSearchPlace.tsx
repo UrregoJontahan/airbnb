@@ -34,17 +34,17 @@ export const ButtonSearchPlace = () => {
   const calendarRef = useRef<HTMLDivElement>(null);
 
   useEffect(()=>{
-    const handleScroll = () =>{
-      setScrolledY(window.scrollY > 5)
+    const SCROLL_THRESHOLD = 5
+
+    const onScroll = () =>{
+      setScrolledY(window.scrollY > SCROLL_THRESHOLD)
     }
-    window.addEventListener("scroll",handleScroll)
+    window.addEventListener("scroll",onScroll)
 
     return ()=>{
-      window.removeEventListener("scroll", handleScroll)
+      window.removeEventListener("scroll", onScroll)
     }
   },[])
-
-  console.log(scrolledY)
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
@@ -84,7 +84,7 @@ export const ButtonSearchPlace = () => {
 
   return (
     <div ref={calendarRef} >
-      <div className="hidden md:block md:border-b md:pb-4 bg-white">
+      <div className="hidden md:block md:pb-4 ">
         { scrolledY ? 
           <motion.div
             initial={{opacity:0}}
@@ -98,7 +98,7 @@ export const ButtonSearchPlace = () => {
          initial={{opacity:100}}
          animate={{opacity: scrolledY ? 0 : 1 }} 
          transition={{duration:0.1}}
-         className="flex justify-center mt-4 bg-white">
+         className="flex justify-center bg-white ">
          <div className="w-auto">
            <div ref={whereRef} className={`flex flex-row items-center border border-gray-200 rounded-full h-16 shadow-md shadow-neutral-300
              ${openWhere && `bg-gray-100`} ${openArrive && `bg-gray-100`} ${openExit && `bg-gray-100`} ${exploreDestinations && `bg-gray-100`}

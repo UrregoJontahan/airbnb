@@ -13,7 +13,7 @@ export function Tags (){
                 animate={{opacity: scrolledY ? 0 : 1,
                     y: scrolledY ? -70 : 0
                  }}
-            className="flex flex-row flex-nowrap list-none pl-16 pt-3">
+            className={`flex flex-row flex-nowrap list-none pl-16 pt-3 ${scrolledY && "hidden"}`}>
                 <ul className="flex flex-row flex-nowrap list-none gap-x-9 mx-auto relative left-16 justify-center text-base text-gray-500 m-8">
                     <li className=" hover:text-black cursor-pointer text-lg">Estadias</li>
                     <li className=" hover:text-black cursor-pointer text-lg ">Experiencias</li>

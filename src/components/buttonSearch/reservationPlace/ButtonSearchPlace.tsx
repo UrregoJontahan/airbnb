@@ -27,6 +27,7 @@ export const ButtonSearchPlace = () => {
     setExploreDestinations,
     scrolledY,
     setScrolledY,
+    clickButtonSearSmall,
   } = useStore();
 
   
@@ -84,21 +85,22 @@ export const ButtonSearchPlace = () => {
 
   return (
     <div ref={calendarRef} >
-      <div className="hidden md:block md:pb-4 ">
+      <div className="hidden md:block md:pb-4">
         { scrolledY ? 
           <motion.div
-            initial={{opacity:0}}
-            animate={{opacity: scrolledY ? 100 : 0 }} 
-            transition={{duration:7}}
+            initial={{opacity:0 , scale:0}}
+            animate={{opacity: scrolledY ? 100 : 0, scale: scrolledY ? 0.98 : 0 , y: scrolledY ? -10 : 0 }} 
+            transition={{duration:0.3}}
+            className="flex justify-center ml-72"
           >
             <ButtonSearchSmall/>
           </motion.div>
          : 
          <motion.div
-         initial={{opacity:100}}
-         animate={{opacity: scrolledY ? 0 : 1 }} 
-         transition={{duration:0.1}}
-         className="flex justify-center bg-white ">
+         initial={{ scale: 1}}
+         animate={{ scale: scrolledY ? 0 : 1 ,  y: scrolledY ? -20 : 0}} 
+         transition={{duration:0.2}}
+         className="flex justify-center bg-white">
          <div className="w-auto">
            <div ref={whereRef} className={`flex flex-row items-center border border-gray-200 rounded-full h-16 shadow-md shadow-neutral-300
              ${openWhere && `bg-gray-100`} ${openArrive && `bg-gray-100`} ${openExit && `bg-gray-100`} ${exploreDestinations && `bg-gray-100`}
@@ -146,7 +148,7 @@ export const ButtonSearchPlace = () => {
        </motion.div>
         }
       </div>
-      <div className="md:hidden">
+      <div className={`md:hidden`}>
         <ButtonSearchMobile />
       </div>
     </div>

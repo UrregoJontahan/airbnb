@@ -4,7 +4,7 @@ import MenuMobile from "./menuOptions/layout";
 
 export default function Home (){
     return(
-        <main>
+        <main className="scroll-auto">
             <Header/>
             <RoomList/>
             <div className="md:hidden">

@@ -22,6 +22,8 @@ interface State {
   noShow:boolean,
   suggestionsAddress:boolean,
   scrolledY:boolean,
+  clickButtonSearSmall:boolean,
+  showIcons:boolean,
   setOpenWhere: (open: boolean) => void;
   setOpenarrive: (open: boolean) => void;
   setOpenExit: (open:boolean) => void;
@@ -43,6 +45,8 @@ interface State {
   setNoShow: (click:boolean) => void;
   setSuggestionsAddress: (click:boolean) => void;
   setScrolledY :( scroll:boolean) =>void;
+  setClickButtonSearchSmall:( click:boolean ) => void;
+  setShowIcons:( click:boolean ) => void;
 }
 
 export const useStore = create<State>(( set:any) => ({
@@ -67,6 +71,8 @@ export const useStore = create<State>(( set:any) => ({
   noShow:false,
   suggestionsAddress:false,
   scrolledY:false,
+  clickButtonSearSmall:false,
+  showIcons:true,
   setOpenWhere: (open) => set({ openWhere: open }),
   setOpenarrive: (open) => set({ openArrive: open }),
   setOpenExit:(open)=> set({openExit:open}),
@@ -87,5 +93,7 @@ export const useStore = create<State>(( set:any) => ({
   setOpenFormNumberPeople: (click) => set({openFormNumberPeople: click}) ,
   setNoShow: (click) => set ({ noShow: click }),
   setSuggestionsAddress:(click) => set({ suggestionsAddress:click }),
-  setScrolledY:(scroll) => set({ scrolledY:scroll })
+  setScrolledY:(scroll) => set({ scrolledY:scroll }),
+  setClickButtonSearchSmall:(click) => set({ showButtonSearchComplete:click }),
+  setShowIcons: (click) => set ({showIcons: click}),
 }));

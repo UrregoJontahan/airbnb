@@ -6,16 +6,17 @@ import { Logo } from "../shared/logo/logo";
 import { useStore } from "app/app/lib/stateChangeButtonSearch";
 import { ButtonSearchPlace } from "../buttonSearch/reservationPlace/ButtonSearchPlace";
 import { Icons } from "app/components/icons/index"
-
+import { motion } from "framer-motion";
 
   export const  Header = () => {
     
-    const { scrolledY} = useStore()
+    const { scrolledY, clickButtonSearSmall,showIcons } = useStore()
 
       return (
-           <div className={`hidden md:block flex-col ${scrolledY && "absolute top-0 "}`}>
-            <header className={`flex w-full h-20 ${scrolledY && "fixed md:z-20 top-0 bg-white"} `}> 
-                <Logo/>
+      <div className="h-auto border-b">
+        <div className={`hidden md:block flex-col ${scrolledY && "absolute top-0 "}`}>
+          <header className={`flex w-full h-20 ${scrolledY && "fixed md:z-20 top-0 bg-white"} `}> 
+            <Logo/>
                 <div className="flex ml-auto relative bottom-8">
                   <Tags/> 
                 </div>      
@@ -24,12 +25,16 @@ import { Icons } from "app/components/icons/index"
                   <ButtonUser/>
                 </div>
             </header>
-              <div className={`bg-white h-auto ${scrolledY && "fixed md:z-20 left-96 ml-80"}`}>
+           </div>
+           <div>
+            <div className={`bg-white h-auto ${scrolledY && "md:fixed md:z-20 md:flex md:justify-center md:ml-80"}`}>
                 <ButtonSearchPlace/>
               </div>
-                <div className={`w-full h-auto bg-white ${scrolledY && "fixed md:z-10 top-24"}`}>
-                  <Icons/>
+                <div
+                  className={`w-full h-auto bg-white ${scrolledY && "md:fixed md:z-30 md:top-20"} ${clickButtonSearSmall && "hidden"}`}>
+                  { showIcons && <Icons/>}
                 </div>
-           </div>
+            </div>
+       </div>
       )
   }

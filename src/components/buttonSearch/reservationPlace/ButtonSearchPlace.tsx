@@ -27,7 +27,6 @@ export const ButtonSearchPlace = () => {
     setExploreDestinations,
     scrolledY,
     setScrolledY,
-    clickButtonSearSmall,
   } = useStore();
 
   

@@ -20,8 +20,8 @@ const handleDecrement = (setter: React.Dispatch<React.SetStateAction<number>>, v
 };
 
   return (
-  <div className="md:flex md:absolute md:flex-col md:justify-center md:w-11/12">
-    <div className='hidden md:block relative md:top-24'>
+  <div className="md:flex md:flex-col md:justify-center md:w-11/12 md:p-4 md:ml-8">
+    <div className='hidden md:block'>
       <div className=''>
         <div className="flex flex-col items-center justify-center">
           <h2 className="text-xl font-semibold m-8">¿Cuándo es tu viaje?</h2>

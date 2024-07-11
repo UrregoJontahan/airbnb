@@ -47,7 +47,7 @@ export default function DetailsRoom({ params }: any) {
       <Calification />
       <UserHost host={room.host} />
       <IconsReference />
-      <div className="p-6 text-lg border-b ml-4 w-11/12">{room.description}</div>
+      <div className="p-6 text-lg  ml-4 w-11/12">{room.description}</div>
       <InfoRoom room={room} /> 
         <div className="pl-8">
           <h2 className='text-2xl font-semibold'>A donde iras</h2>

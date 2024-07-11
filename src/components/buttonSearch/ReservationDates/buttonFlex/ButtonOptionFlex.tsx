@@ -9,7 +9,7 @@ const roboto = Roboto({
 
 export function ButtonOptionFlexReservation (){
     return (
-        <div className="md:flex md:absolute md:top-28 md:flex-col md:justify-center md:w-11/12 mt-4 border-t pt-4">
+        <div className="md:flex  md:flex-col md:justify-center md:w-11/12 mt-4 border-t md:border-t-0 pt-4 md:mt-0">
             <h2 className={`md:${roboto.className} md:text-xl text-lg font-semibold pl-4 md:font-bolder flex md:justify-center`}>¿Cuánto tiempo quieres quedarte?</h2>
             <div className='flex md:gap-4 justify-center md:mt-6 mt-3 gap-2'>
                 <button className='border border-gray-300 md:pt-2 md:pb-2 md:pl-4 md:pr-4 pl-3 pr-3 pb-1 pt-1 rounded-full focus:border-black focus:border-2 cursor-pointer'>

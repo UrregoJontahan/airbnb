@@ -22,7 +22,7 @@ export function RoomList() {
   }, []);
 
   return (
-    <div className={`w-full h-auto md:mt-2 flex md:justify-center mb-8 ${scrolledY && "md:relative md:top-48"}`}>
+    <div className={`w-full h-auto md:mt-2 flex md:justify-center ${scrolledY && "md:relative md:top-48"}`}>
       <ul className="flex flex-wrap pl-5 md:justify-center list-none">
         {rooms.map((room) => (
           <li key={room.id} className="w-11/12 md:w-72 md:pl-4">

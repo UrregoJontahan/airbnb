@@ -11,9 +11,9 @@ export function ButtonSearchMobile() {
     }
 
     return (
-        <div className="w-full flex justify-center">
-            <div className="flex w-full justify-center">
-                <div className="h-14 flex rounded-full border border-gray-300  items-center w-11/12 m-4 shadow-md"
+        <div className="w-screen flex justify-center">
+            <div className="flex w-full justify-center pb-2">
+                <div className="h-14 flex rounded-full border border-gray-300  items-center w-11/12 mt-4 shadow-md"
                     onClick={handleClickButtonSearch}
                 >
                     <div className="w-14 h-14 flex items-center rounded-full justify-center">
@@ -28,9 +28,6 @@ export function ButtonSearchMobile() {
                         </ul>
                     </div>
                 </div>
-            </div>
-            <div className="w-11 h-10 mt-6 mr-2 border border-gray-400 flex justify-center items-center rounded-full relative right-2">
-                <VscSettings className="text-2xl" />
             </div>
             {openPanelSearch && <SearchPanelMobile/>}
         </div>

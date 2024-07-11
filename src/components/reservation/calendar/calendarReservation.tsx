@@ -77,7 +77,7 @@ export const CalendarReservation = () => {
     const nextMonth = new Date(viewDateNext);
     nextMonth.setMonth(nextMonth.getMonth() + additionalMonths);
     let updateCalendar = [...calendar,
-      <div className='md:flex md:h-96 w-96 md:mb-0 relative bottom-3'>
+      <div className='md:flex md:h-96 w-96 h-68 md:justify-center mt-12 md:mt-0'>
           <Calendar
             onChange={handleDateChange}
             value={[arrival, departure]}
@@ -94,11 +94,11 @@ export const CalendarReservation = () => {
   };
   
   return (
-    <div className="md:flex md:absolute md:top-20 md:flex-col">
-      <div className='md:flex md:flex-nowrap'>
+    <div className="md:flex md:relative md:flex-col">
+      <div className='md:flex md:flex-nowrap md:justify-center'>
         <div className='h-96 overflow-x-hidden overflow-y-auto md:h-auto md:flex md:mb-3 md:mt-0 pt-2 '>
           <div className='h-9 w-96 border-b fixed flex items-start overflow-hidden md:hidden'>
-            <Calendar className={`week md:hidden z-50`}/>
+            <Calendar className={`week md:hidden z-20`}/>
           </div>
           <div className='md:flex md:h-96 w-96 h-68 md:justify-center mt-12 md:mt-0'>
             <Calendar
@@ -112,7 +112,7 @@ export const CalendarReservation = () => {
               tileClassName={tileClassName}
             />
           </div>
-          <div className='md:flex md:h-96 w-96 md:mb-0 relative bottom-3 md:bottom-0 ml-3 m:ml-0'>
+          <div className='md:flex md:h-96 w-96 h-68 md:justify-center mt-12 md:mt-0'>
             <Calendar
               onChange={handleDateChange}
               value={[arrival, departure]}

@@ -1,9 +1,10 @@
 import { useStore } from "app/app/lib/stateChangeButtonSearch";
-import { useState } from "react";
+import { BookingForm } from "../BookingForm/bookingForm";
+import { useStateGuestsForm } from "app/app/lib/reservationForm/stateGuestsForm";
 
 export function ReservationDates (){
     const { arrivalDate, departureDate } = useStore();
-    const [openCalendar, setOpenCalendar] = useState( false)
+    const { openCalendar, setOpenCalendar } = useStateGuestsForm()
 
     const currentDate = new Date();
     const endOfMonthDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
@@ -16,13 +17,12 @@ export function ReservationDates (){
       return `${day}/${month}/${year}`;
     };
   
-    const formatDateDeparture = (date: Date) => {
+    const formatDateDeparture = (date: Date) => { 
       const day = String(date.getDate());
       const month = String(date.getMonth()+ 1)
       const year = date.getFullYear();
       return `${day}/${month}/${year}`;
     };
-  
   
     const formattedArrivalDate = arrivalDate instanceof Date 
       ? formatDateArrival(arrivalDate)
@@ -40,7 +40,7 @@ export function ReservationDates (){
 
     return(
     <div>
-        <section className="grid grid-cols-2">
+      <section className="grid grid-cols-2">
         <div className="border-r border-gray-400 p-2 text-sm font-semibold ">
           <p>Llegada</p>
           <button className="text-base font-normal" onClick={handleClickOpenCalender}>
@@ -59,13 +59,11 @@ export function ReservationDates (){
             )}
           </button>
         </div>
-        
+
+        {openCalendar && (
+          <BookingForm/>
+        )}
       </section>
-      {openCalendar && (
-        <div className="absolute bg-white shadow-md shadow-gray-400 rounded-3xl overflow-hidden">
-          
-        </div>
-      )}
     </div>
-    )
+  )
 }

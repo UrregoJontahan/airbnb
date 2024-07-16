@@ -37,7 +37,6 @@ export function ReservationDates (){
         setOpenCalendar(true)
       }
 
-
     return(
     <div>
       <section className="grid grid-cols-2">

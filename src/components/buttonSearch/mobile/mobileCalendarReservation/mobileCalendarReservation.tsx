@@ -1,27 +1,46 @@
 import { useStore } from "app/app/lib/stateChangeButtonSearch"
+<<<<<<< HEAD
 import { Reservation } from "../../SearchDates/reservation"
+=======
+import { Reservation } from "../../ReservationDates/reservation"
+import { motion } from "framer-motion";
+>>>>>>> 2ed9e6af545dd88851269d7234e1ba85f26907f3
 
 export function MobileCalendarReservation (){
-    const {openReservation, setOpenReservation, setShowReservationPlace} = useStore()
+    const {
+        openReservation, 
+        setOpenReservation, 
+        setShowReservationPlace, 
+        setOpenFormNumberPeople,
+        openPanelSearch
+    } = useStore()
 
     const handleClickReservation = () => {
         setOpenReservation(true)
         setShowReservationPlace(false)
+        setOpenFormNumberPeople(false)
     }
 
     return(
-        <div>
+        <motion.div
+        initial={{ opacity: 0, y: -70 }}
+        animate={{
+        opacity: openPanelSearch ? 1 : 0,
+        y: openPanelSearch ? 0 : 50,
+        }}
+        transition={{ duration: 0.4 }}
+        >
             {!openReservation ? 
-                <div className="w-11/12 border ml-3 p-2 border-gray-200 rounded-2xl shadow-md shadow-gray-400 bg-white mt-4 h-auto flex gap-4 overflow-y-auto" 
+                <div className="w-11/12 border ml-3 p-2 border-gray-200 rounded-2xl shadow-md bg-white mt-4 h-auto flex gap-4 overflow-y-auto" 
                     onClick={handleClickReservation}>
                     <p className="p-2 text-gray-400 font-medium">Cúando</p>
                     <p className="ml-auto p-2 font-semibold text-base">Agregar fechas</p>
                 </div> 
-            : <div className="w-11/12 border ml-3 p-2 border-gray-200 rounded-2xl shadow-md shadow-gray-400 bg-white mt-4 h-auto ">
+            : <div className="w-11/12 border ml-3 p-2 border-gray-200 rounded-2xl shadow-md shadow-gray-400 bg-white mt-2 h-auto">
                 <h2 className="text-2xl font-semibold m-3">¿Cuando es tu viaje?</h2>
                 <Reservation/>
               </div>
             }
-        </div>
+        </motion.div>
     )
 }

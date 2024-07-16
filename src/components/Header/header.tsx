@@ -11,7 +11,7 @@ export const  Header = () => {
   const { scrolledY, clickButtonSearSmall,showIcons } = useStore()
   
   return (
-    <div className="h-auto">
+    <div className="h-auto"> 
       <div className={`hidden md:block flex-col ${scrolledY && "absolute top-0 "}`}>
         <header className={`flex w-full h-20 ${scrolledY && "fixed md:z-20 top-0 bg-white"} `}> 
           <Logo/>

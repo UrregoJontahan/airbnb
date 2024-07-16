@@ -49,7 +49,7 @@ export function ImagesCarouselMobile ({room}:any){
           onTouchStart={handleTouchStart}
           onTouchEnd={handleTouchEnd} >
             <Image
-              src={room.photos[currentIndex]}
+              src={room.photos[currentIndex]} 
               alt={room.title || "Room image"}
               width={500}
               height={500}

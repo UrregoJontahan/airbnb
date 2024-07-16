@@ -6,7 +6,7 @@ import { FaWifi } from "react-icons/fa";
 
 export function InfoRoom ({room}:any){
     return(
-        <div>
+        <div className="md:ml-8">
             <div className="p-6 border-b w-11/12 ml-4">
         <h2 className="text-2xl font-semibold">¿Donde vas a dormir?</h2>
         <div className="w-3/5 p-4 border rounded-lg mt-4">

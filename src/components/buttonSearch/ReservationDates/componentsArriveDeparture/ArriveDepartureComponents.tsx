@@ -12,7 +12,7 @@ export function ArriveDeparture (){
         openWhere,
         exploreDestinations,
         setShowExitButton,
-        setArrivalDate,
+        setArrivalDate, 
         setDepartureDate,
         setOpenarrive,
         setOpenWhere,

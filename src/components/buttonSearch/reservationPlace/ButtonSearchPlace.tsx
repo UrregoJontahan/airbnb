@@ -90,7 +90,7 @@ export const ButtonSearchPlace = () => {
             initial={{opacity:0 , scale:0}}
             animate={{opacity: scrolledY ? 100 : 0, scale: scrolledY ? 0.98 : 0 , y: scrolledY ? -10 : 0 }} 
             transition={{duration:0.3}}
-            className="flex justify-center ml-72"
+            className="flex justify-center ml-72 mt-8"
           >
             <ButtonSearchSmall/>
           </motion.div>
@@ -129,7 +129,7 @@ export const ButtonSearchPlace = () => {
                    Explora destinos
                  </p>
                </span>
-               {exploreDestinations && <NumberOfPeopleForm />}
+               {exploreDestinations && <NumberOfPeopleForm/>}
                <div className="flex justify-center items-center pl-8">
                  {openWhere || openArrive || openExit || exploreDestinations ?
                    <button className="flex h-12 w-32 rounded-full items-center justify-center group-hover:opacity-100 

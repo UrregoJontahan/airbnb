@@ -4,8 +4,8 @@ import { LuCalendarX2 } from "react-icons/lu";
 
 export function IconsReference (){
     return(
-        <div>
-            <div className="flex pl-4">
+        <div className="md:ml-14 md:w-full border-b">
+            <div className="flex">
         <div className="flex gap-4 items-center pb-4 m-2 w-11/12">
             <div className="pl-6">
                 <BsDoorOpen className="w-8 h-8" />
@@ -16,7 +16,7 @@ export function IconsReference (){
             </div>
         </div>
       </div>
-      <div className="flex pl-4">
+      <div className="flex">
         <div className="flex gap-4 items-center pb-4 m-2 w-11/12">
             <div className="pl-6">
                 <PiMedalMilitary className="w-8 h-8" />
@@ -27,8 +27,8 @@ export function IconsReference (){
             </div>
         </div>
       </div>
-      <div className="flex pl-4">
-        <div className="flex gap-4 items-center pb-4 m-2 w-11/12 border-b">
+      <div className="flex">
+        <div className="flex gap-4 items-center pb-4 m-2 w-11/12">
             <div className="pl-6">
                 <LuCalendarX2 className="w-8 h-8" />
             </div>

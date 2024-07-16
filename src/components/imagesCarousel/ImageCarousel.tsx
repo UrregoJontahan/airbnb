@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { FaCircle } from "react-icons/fa";
-import Image from "next/image";
 import { FaCircleArrowRight, FaCircleArrowLeft } from "react-icons/fa6";
-import Link from "next/link";
 import { ButtonShared } from "../shared/buttonShared/buttonShared";
+import Link from "next/link";
+import Image from "next/image";
 
 interface ImageCarouselProps {
   photos: string[];

@@ -1,16 +1,13 @@
 "use client";
 import { useEffect, useState } from "react";
 import { fetchRoomsById } from "app/app/services/getRooms";
-import { ArrowBack } from "app/components/buttonSearch/mobile/arrowBack/arrowBack";
-import { Calification } from "app/components/calification/calification";
-import { UserHost } from "app/components/shared/profileUser/userHost/userHost";
-import { IconsReference } from "app/components/IconsAdReference/iconsAndReference";
-import { InfoRoom } from "app/components/Room-Info-Basic/RoomInfo";
-import { ButtonShared } from "app/components/shared/buttonShared/buttonShared";
-import { Map } from "app/components/Map/map";
 import { ImagesCarouselMobile } from "app/components/imagesCarousel/imagesCarouselMobile";
-import { Details } from "app/components/details/details";
-import { CalendarReservation } from "app/components/reservation/calendar/calendarReservation";
+import { InfoStay } from "app/components/infoStay/infoStay";
+import { StayImages } from "app/components/imagesCarousel/images/images";
+import { RoomInfoHeader } from "app/components/roomInformationHeader/roomInfoHeader";
+import { ReservationSection } from "app/components/reservationSection/ReservationSection";
+import { InformationRoom } from "app/components/informationRoom/informationRoom";
+import { HeaderInfoRoomMobile } from "app/components/buttonSearch/mobile/headerInfoRoom/headerInfoRoom";
 
 export default function DetailsRoom({ params }: any) {
   const [room, setRoom] = useState<{
@@ -37,24 +34,30 @@ export default function DetailsRoom({ params }: any) {
 
 
   return (
-    <div className="mb-20">
-      <div className="w-full h-16 md:hidden flex items-center justify-around gap-44">
-        <ArrowBack />
-        <ButtonShared room={room} />
-      </div>
-      <ImagesCarouselMobile room={room}/>
-      <Details room={room}/>
-      <Calification />
-      <UserHost host={room.host} />
-      <IconsReference />
-      <div className="p-6 text-lg  ml-4 w-11/12">{room.description}</div>
-      <InfoRoom room={room} /> 
-        <div className="pl-8">
-          <h2 className='text-2xl font-semibold'>A donde iras</h2>
-          <p>{room.location}</p>
-          <Map coordinates={room.coordinates}/>
+    <div className="mb-20 flex justify-center">
+      <div className="md:w-8/12 flex flex-col border">
+        <div className="ml-12 mr-12 md:hidden">
+          <HeaderInfoRoomMobile/>
         </div>
-        {/* <CalendarReservation/> */}
+      <div className="hidden md:block">
+        <RoomInfoHeader/>
+      </div>
+      <div className="md:hidden">
+        <ImagesCarouselMobile room={room}/>
+      </div>
+      <div className="hidden md:block">
+        <InfoStay room={ room }/>
+      </div>
+        <div className="hidden md:block">
+          <StayImages photos={room.photos}/>
+        </div>
+        <div className="flex ml-8 md:ml-0">
+            <InformationRoom room={room}/>
+            <div className="ml-auto mr-12">
+              <ReservationSection room={room}/>
+            </div>
+        </div>
+      </div>
     </div>
   );
 }

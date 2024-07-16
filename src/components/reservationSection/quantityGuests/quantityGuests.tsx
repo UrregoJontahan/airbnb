@@ -29,7 +29,7 @@ export function QuantityGuests ({ room } :any){
             </div>
             <p className="text-base font-normal pl-2">
                 {TotalGuests} 
-                {adults > 1 ? " Huespedes" : "Huesped"} 
+                {adults > 1 ? " Huespedes" : " Huesped"} 
                 {babys > 0 ? `, ${babys } bebé` : ""} 
                 {pets > 0 ? `, ${pets } mascota` : "" }
             </p>

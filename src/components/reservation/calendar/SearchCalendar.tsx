@@ -5,7 +5,7 @@ import { OffsetDaysCalendar } from 'app/components/buttonSearch/ReservationDates
 import { useStore } from 'app/app/lib/stateChangeButtonSearch';
 import { OptionsSkipAndNext } from 'app/components/buttonSearch/mobile/sectionSkip/optionSkipAndNext';
 
-export const CalendarReservation = () => {
+export const SearchCalendar = () => {
   const {
     arrivalDate,
     departureDate,

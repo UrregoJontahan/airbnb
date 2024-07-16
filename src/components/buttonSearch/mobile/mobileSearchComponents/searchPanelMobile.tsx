@@ -1,16 +1,16 @@
 import { TagsMobile } from "./tagsMobile/tagsMobile";
-import { MobileCalendarReservation } from "../mobileCalendarReservation/mobileCalendarReservation";
-import { MobileReservationPlace } from "../mobileReservationPlace/mobileReservationPlace";
-import { FormReservationNumberPeople } from "../formReservationPeople/formResevationPeople";
+import { MobileSearchCalendar } from "../MobileSearchCalendar/mobileSearchCalendar";
+import { SearchFormByPeople } from "../SearchFormByPeople/SearchFormByPeople";
 import { OptionClearOrSearch } from "../OptionSearchOrClearSearch/ClearOrSearchSearch";
+import { MobileSearchPlace } from "../MobileSearchPlace/MobileSearchPlace";
 
 export function   SearchPanelMobile (){
     return (
         <div className={`w-screen h-screen fixed top-0 bg-gray-200 z-40`}>
             <TagsMobile/>
-            <MobileReservationPlace/>
-            <MobileCalendarReservation/>
-            <FormReservationNumberPeople/>
+            <MobileSearchPlace/>
+            <MobileSearchCalendar/>
+            <SearchFormByPeople/>
             <OptionClearOrSearch/>
         </div> 
     )

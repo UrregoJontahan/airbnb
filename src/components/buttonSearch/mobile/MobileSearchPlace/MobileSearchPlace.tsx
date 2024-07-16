@@ -3,7 +3,7 @@ import { ContainerMaps } from "../../reservationPlace/containerMap"
 import { useStore } from "app/app/lib/stateChangeButtonSearch"
 import { motion } from "framer-motion"
 
-export function MobileReservationPlace (){
+export function MobileSearchPlace (){
 
     const { 
         showReservationPlace,

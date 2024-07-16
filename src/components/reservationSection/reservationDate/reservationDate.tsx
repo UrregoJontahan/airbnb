@@ -1,9 +1,10 @@
 import { useStore } from "app/app/lib/stateChangeButtonSearch";
+import { useState } from "react";
 
 export function ReservationDates (){
     const { arrivalDate, departureDate } = useStore();
+    const [openCalendar, setOpenCalendar] = useState( false)
 
- 
     const currentDate = new Date();
     const endOfMonthDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0);
     const departureDay =  new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 7);
@@ -32,11 +33,17 @@ export function ReservationDates (){
       : formatDateDeparture(departureDay
       );
 
+      const handleClickOpenCalender = () => {
+        setOpenCalendar(true)
+      }
+
+
     return(
+    <div>
         <section className="grid grid-cols-2">
-        <div className="border-r border-gray-400 p-2 text-sm font-semibold">
+        <div className="border-r border-gray-400 p-2 text-sm font-semibold ">
           <p>Llegada</p>
-          <button className="text-base font-normal">
+          <button className="text-base font-normal" onClick={handleClickOpenCalender}>
             {formattedArrivalDate}
             {arrivalDate && (
               <span className=""></span>
@@ -45,13 +52,20 @@ export function ReservationDates (){
         </div>
         <div className="p-2 text-sm font-semibold">
           <p>Salida</p>
-          <button className="text-base font-normal">
+          <button className="text-base font-normal" onClick={handleClickOpenCalender}>
           {formattedDepartureDate}
             {departureDate && (
               <span className=""></span>
             )}
           </button>
         </div>
+        
       </section>
+      {openCalendar && (
+        <div className="absolute bg-white shadow-md shadow-gray-400 rounded-3xl overflow-hidden">
+          
+        </div>
+      )}
+    </div>
     )
 }

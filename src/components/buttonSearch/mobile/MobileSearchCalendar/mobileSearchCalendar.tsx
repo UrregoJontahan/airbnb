@@ -1,8 +1,8 @@
 import { useStore } from "app/app/lib/stateChangeButtonSearch"
-import { Reservation } from "../../ReservationDates/reservation"
+import { SearchRoom } from "../../ReservationDates/SearchRoom"
 import { motion } from "framer-motion";
 
-export function MobileCalendarReservation (){
+export function MobileSearchCalendar(){
     const {
         openReservation, 
         setOpenReservation, 
@@ -34,7 +34,7 @@ export function MobileCalendarReservation (){
                 </div> 
             : <div className="w-11/12 border ml-3 p-2 border-gray-200 rounded-2xl shadow-md shadow-gray-400 bg-white mt-2 h-auto">
                 <h2 className="text-2xl font-semibold m-3">¿Cuando es tu viaje?</h2>
-                <Reservation/>
+                <SearchRoom/>
               </div>
             }
         </motion.div>

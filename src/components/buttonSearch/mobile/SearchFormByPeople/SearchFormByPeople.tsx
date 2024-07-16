@@ -2,7 +2,7 @@ import { useStore } from "app/app/lib/stateChangeButtonSearch"
 import { NumberOfPeopleForm } from "../../numberOfPeopleForm/numberOfPeopleForm"
 import { motion } from "framer-motion";
 
-export function FormReservationNumberPeople (){
+export function SearchFormByPeople (){
 
     const { 
         setOpenReservation, 

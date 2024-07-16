@@ -1,5 +1,5 @@
 import { useStore } from "app/app/lib/stateChangeButtonSearch"
-import { Reservation } from "../../ReservationDates/reservation"
+import { Reservation } from "../../SearchDates/reservation"
 
 export function MobileCalendarReservation (){
     const {openReservation, setOpenReservation, setShowReservationPlace} = useStore()

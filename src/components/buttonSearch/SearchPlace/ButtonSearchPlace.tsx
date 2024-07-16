@@ -7,7 +7,7 @@ import { SuggestionLocation } from "./suggestionLocation/suggestionLocation";
 import { useStore } from "app/app/lib/stateChangeButtonSearch";
 import { NumberOfPeopleForm } from "../numberOfPeopleForm/numberOfPeopleForm";
 import { LocationSearchInput } from "../locationSearchInput/locationSearchInput";
-import { ArriveDeparture } from "../ReservationDates/componentsArriveDeparture/ArriveDepartureComponents";
+import { ArriveDeparture } from "../SearchDates/componentsArriveDeparture/ArriveDepartureComponents";
 
 export const ButtonSearchPlace = () => {
   const {

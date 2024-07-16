@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Calendar from 'react-calendar';
 import 'app/app/styles/calendarStyles.css';
-import { TagsCalendar } from 'app/components/buttonSearch/ReservationDates/TagsCalendar/tagsCalendar';
+import { TagsCalendar } from 'app/components/buttonSearch/SearchDates/TagsCalendar/tagsCalendar';
 import { useStore } from 'app/app/lib/stateChangeButtonSearch';
 
 export const CalendarReservation = () => {

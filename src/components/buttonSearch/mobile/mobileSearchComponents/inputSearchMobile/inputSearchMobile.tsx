@@ -1,7 +1,7 @@
 import { useStore } from "app/app/lib/stateChangeButtonSearch"
 import { useState } from "react"
 import { LocationSearchInput } from "app/components/buttonSearch/locationSearchInput/locationSearchInput"
-import { SuggestionLocation } from "app/components/buttonSearch/reservationPlace/suggestionLocation/suggestionLocation"
+import { SuggestionLocation } from "app/components/buttonSearch/SearchPlace/suggestionLocation/suggestionLocation"
 
 export function InputSearchMobile (){
     const { address, setAddress, closed, setClosed } = useStore()

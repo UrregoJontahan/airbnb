@@ -1,5 +1,5 @@
 import { InputSearchMobile } from "../mobileSearchComponents/inputSearchMobile/inputSearchMobile"
-import { ContainerMaps } from "../../reservationPlace/containerMap"
+import { ContainerMaps } from "../../SearchPlace/containerMap"
 import { useStore } from "app/app/lib/stateChangeButtonSearch"
 
 export function MobileReservationPlace (){

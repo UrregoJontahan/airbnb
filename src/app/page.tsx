@@ -1,5 +1,5 @@
 import { Header } from "app/components/Header";
-import { ButtonSearchPlace } from "app/components/buttonSearch/reservationPlace/ButtonSearchPlace";
+import { ButtonSearchPlace } from "app/components/buttonSearch/SearchPlace/ButtonSearchPlace";
 import { RoomList } from "../components/Home/index"
 import { Icons } from "../components/icons/index"
 import MenuMobile from "./menuOptions/layout";

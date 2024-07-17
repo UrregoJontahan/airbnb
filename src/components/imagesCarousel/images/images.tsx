@@ -12,7 +12,7 @@ export function StayImages(
       <div className="w-11/12 flex">
         <div className="flex-none w-[600px] h-[550px] overflow-hidden">
           <Image 
-            src={photos[0]} 
+            src={photos[0]} // esto llama solamente la primera imagen 
             alt="Foto 1" 
             width={600} 
             height={400} 
@@ -20,7 +20,7 @@ export function StayImages(
           />
         </div>
         <div className="grid grid-cols-2 justify-center gap-4 rounded-r-2xl ml-4 overflow-hidden w-full h-[550px] ">
-          {photos.slice(1).map((photo, index) => (
+          {photos.slice(1).map((photo, index) => ( // esto elimina la primera images y trae las siguientes para hacer el efecto de bento
             <div key={index + 1}>
               <Image 
                 src={photo} 

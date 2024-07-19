@@ -1,10 +1,7 @@
 import { useStore } from "app/app/lib/stateChangeButtonSearch"
-<<<<<<< HEAD
 import { Reservation } from "../../SearchDates/reservation"
-=======
-import { Reservation } from "../../ReservationDates/reservation"
-import { motion } from "framer-motion";
->>>>>>> 2ed9e6af545dd88851269d7234e1ba85f26907f3
+import { motion } from "framer-motion"
+
 
 export function MobileCalendarReservation (){
     const {

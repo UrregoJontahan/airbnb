@@ -6,6 +6,7 @@ import { Logo } from "../shared/logo/logo";
 import { useStore } from "app/app/lib/stateChangeButtonSearch";
 import { ButtonSearchPlace } from "../buttonSearch/reservationPlace/ButtonSearchPlace";
 import { Icons } from "app/components/icons/index"
+import { ButtonShowMap } from "../buttonShowMap/buttonShowMap";
 
 export const  Header = () => {    
   const { scrolledY, clickButtonSearSmall,showIcons } = useStore()
@@ -31,6 +32,9 @@ export const  Header = () => {
         <div
           className={`w-full h-auto bg-white ${scrolledY && "mt-2 md:mt-0 md:z-30 md:top-20 fixed top-20 z-20"} ${clickButtonSearSmall && "md:hidden"}`}>
           { showIcons && <Icons/>}
+        </div>
+        <div className="fixed bottom-10 w-full flex justify-center ">
+          <ButtonShowMap/>
         </div>
       </div>
     </div>

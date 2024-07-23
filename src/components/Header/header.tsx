@@ -33,7 +33,7 @@ export const  Header = () => {
           className={`w-full h-auto bg-white ${scrolledY && "mt-2 md:mt-0 md:z-30 md:top-20 fixed top-20 z-20"} ${clickButtonSearSmall && "md:hidden"}`}>
           { showIcons && <Icons/>}
         </div>
-        <div className="fixed bottom-10 w-full flex justify-center ">
+        <div className="fixed bottom-10 w-full flex justify-center z-50 ">
           <ButtonShowMap/>
         </div>
       </div>

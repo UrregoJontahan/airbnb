@@ -4,10 +4,13 @@ import { fetchRooms } from "app/app/services/getRooms";
 import { useEffect, useState } from "react";
 import { ImageCarousel } from "../imagesCarousel/ImageCarousel";
 import { useStore } from "app/app/lib/stateChangeButtonSearch";
+import { stateMap } from "app/app/lib/stateMapHome/stateMap";
+import { MapRoomsHome } from "../Map/mapHome/mapHome";
 
 export function RoomList() {
   const [rooms, setRooms] = useState<any[]>([]);
   const { scrolledY } = useStore()
+  const { showMap } = stateMap()
 
   useEffect(() => {
     const getRooms = async () => {
@@ -22,25 +25,35 @@ export function RoomList() {
   }, []);
 
   return (
-    <div className={`w-full h-auto md:mt-2 flex md:justify-center ${scrolledY && "md:relative md:top-48"}`}>
-      <ul className="flex flex-wrap pl-5 md:justify-center list-none">
-        {rooms.map((room) => (
-          <li key={room.id} className="w-11/12 md:w-72 md:pl-4">
-            {room.photos.length > 0 && (
-              <div>
-                <ImageCarousel photos={room.photos} alt={room.title} room={room} />
-                <div className="p-2 w-full">
-                  <p className="font-semibold">{room.location}</p>
-                  <p className="text-base">{room.city}</p>
-                  <p className="text-base font-semibold flex gap-1">
-                    ${room.price} <span className="font-normal">noche</span>
-                  </p>
-                </div>
-              </div>
-            )}
-          </li>
-        ))}
-      </ul>
+    <div>
+     {showMap ?  
+        <div className="w-full h-[45.6rem] overflow-hidden">
+          <MapRoomsHome rooms ={rooms}/>
+        </div>
+        : 
+        <div className={`w-full h-auto md:mt-2 flex md:justify-center ${scrolledY && "md:relative md:top-48"}`}>
+       <ul className="flex flex-wrap pl-5 md:justify-center list-none">
+       {rooms.map((room) => (
+         <li key={room.id} className="w-11/12 md:w-72 md:pl-4">
+           {room.photos.length > 0 && (
+             <div>
+               <ImageCarousel photos={room.photos} alt={room.title} room={room} />
+               <div className="p-2 w-full">
+                 <p className="font-semibold">{room.location}</p>
+                 <p className="text-base">{room.city}</p>
+                 <p className="text-base font-semibold flex gap-1">
+                   ${room.price} <span className="font-normal">noche</span>
+                 </p>
+               </div>
+             </div>
+           )}
+         </li>
+       ))}
+     </ul>
     </div>
+     }
+
+    </div>
+
   );
 }
